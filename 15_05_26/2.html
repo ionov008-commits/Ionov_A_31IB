@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа: Формы</title>
+</head>
+<body>
+
+    <table border="1" width="700" cellpadding="10" cellspacing="0">
+        
+        <tr>
+            <td width="350" valign="top">
+                <form name="search_form_1" method="get" action="form.php">
+                    Строка поиска <br>
+                    <input type="text" name="query1" maxlength="10"> 
+                    <input type="submit" value="Искать"> <br>
+                    <input type="radio" name="search_type1" value="site" checked> на сайте 
+                    <input type="radio" name="search_type1" value="google"> в google <br>
+                </form>
+            </td>
+
+            <td width="350" valign="top">
+                <form name="search_form_2" method="get" action="form.php">
+                    Строка поиска * <br>
+                    <input type="text" name="query2" required autofocus> 
+                    <input type="submit" value="Искать"> <br>
+                    <input type="radio" name="search_type2" value="site" checked> на сайте 
+                    <input type="radio" name="search_type2" value="google"> в google <br>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top">
+                <small style="color: gray;">Простая форма авторизации:</small>
+                <h3>Авторизируйтесь</h3>
+                <form name="auth_form" method="post" action="form.php">
+                    * Логин:<br>
+                    <input type="text" name="login" required><br>
+                    * Пароль:<br>
+                    <input type="password" name="password" required><br>
+                    <input type="checkbox" name="remember" value="yes"> Оставаться в системе<br><br>
+                    <input type="submit" value="Войти"><br><br>
+                    <small>* - обязательное поле</small>
+                </form>
+            </td>
+
+            <td valign="top">
+                <small style="color: gray;">Опрос(голосование):</small><br><br>
+                <form name="vote_form" method="post" action="form.php">
+                    <strong>Как вам?</strong><br>
+                    <input type="radio" name="vote_rating" value="nothing"> ничего<br>
+                    <input type="radio" name="vote_rating" value="not_bad"> неплохо<br>
+                    <input type="radio" name="vote_rating" value="good"> хорошо<br>
+                    <input type="radio" name="vote_rating" value="super" checked> супер<br><br>
+                    
+                    <input type="hidden" name="date_voite" value="2013.12.31">
+                    
+                    <input type="submit" value="Отправить"><br><br>
+                    <small style="color: green;">Есть скрытое поле name=date_voite, value="2013.12.31"</small>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top">
+                <small style="color: gray;">Отзыв:</small>
+                <h3>Оставьте Ваш отзыв</h3>
+                <form name="feedback_form" method="post" action="form.php">
+                    * Имя:<br>
+                    <input type="text" name="username" required><br>
+                    * e-mail:<br>
+                    <input type="email" name="email" required><br>
+                    Отзыв:<br>
+                    <textarea name="message" cols="30" rows="3" required></textarea><br><br>
+                    <input type="submit" value="Отправить"><br><br>
+                    <small>* - обязательное поле<br>поле email - с проверкой<br>метод POST</small>
+                </form>
+            </td>
+
+            <td valign="top">
+                <small style="color: gray;">Выпадающий и мульти списки:</small><br><br>
+                <form name="lists_form" method="post" action="form.php">
+                    <label>Города РБ</label><br>
+                    <select name="single_city">
+                        <option value="brest">Брест</option>
+                    </select>
+                    <br><br>
+                    
+                    <select name="multiple_cities[]" multiple size="7">
+                        <optgroup label="Города РБ">
+                            <option value="brest">Брест</option>
+                            <option value="minsk">Минск</option>
+                            <option value="vitebsk">Витебск</option>
+                        </optgroup>
+                        <optgroup label="Города России">
+                            <option value="moscow">Москва</option>
+                            <option value="ryazan">Рязань</option>
+                            <option value="magadan">Магадан</option>
+                        </optgroup>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Ок">
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top">
+                <small style="color: gray;">Загрузка файла на сервер:</small>
+                <h3>Upload</h3>
+                <form name="upload_form" method="post" action="form.php" enctype="multipart/form-data">
+                    Файл:<br>
+                    <input type="file" name="file" required><br><br>
+                    Срок хранения (года):<br>
+                    <input type="number" name="store_years" min="1" max="10" value="1"><br><br>
+                    <input type="submit" value="загрузить"><br><br>
+                    <small>Метод POST<br>В теге form используется атрибут enctype="multipart/form-data"</small>
+                </form>
+            </td>
+
+            <td valign="top">
+                <small style="color: gray;">Валидация данных HTML5:</small><br><br>
+                <form name="validation_form" method="post" action="form.php">
+                    Строка поиска (Только русские буквы):<br>
+                    <input type="text" name="ru_only" pattern="^[А-Яа-яЁё\s]+$" title="Разрешена только кириллица" required><br><br>
+                    
+                    Телефонный номер в формате +ХХХ-ХХ-ХХХХХХХ:<br>
+                    <input type="tel" name="phone_number" pattern="^\+[0-9]{3}-[0-9]{2}-[0-9]{7}$" placeholder="+375-29-1234567" required><br><br>
+                    
+                    <input type="submit" value="Проверить">
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

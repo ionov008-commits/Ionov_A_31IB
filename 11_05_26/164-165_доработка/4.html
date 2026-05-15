@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        td { border: 1px solid black; padding: 10px; text-align: center; }
+        
+        .tall-row td { height: 100px; }
+
+        .bold-top { border-top: 4px solid black; }
+        .bold-left { border-left: 4px solid black; }
+        .bold-right { border-right: 4px solid black; }
+        .bold-bottom { border-bottom: 4px solid black; }
+    </style>
+</head>
+<body>
+
+    <center>Заголовок таблицы</center>
+    <br>
+
+    <table>
+        <tr>
+            <td>Заголовок 1</td>
+            <td>Заголовок 2</td>
+            <td>Заголовок 3</td>
+            <td>Заголовок 4</td>
+        </tr>
+
+        <tr class="tall-row">
+            <td rowspan="2" style="vertical-align: bottom;">Ячейка 1</td>
+            <td colspan="2" style="vertical-align: middle;">Ячейка 2</td>
+            <td style="vertical-align: top;">Ячейка 3</td>
+        </tr>
+
+        <tr>
+            <td class="bold-top bold-left"></td> 
+            <td class="bold-top">Заголовок 1<br>Таблицы 2</td>
+            <td class="bold-top bold-right">Заголовок 2<br>Таблицы 2</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 4</td>
+            <td class="bold-left">Заголовок 3<br>Таблицы 2</td>
+            <td>Ячейка 1<br>Таблицы 2</td>
+            <td class="bold-right">Ячейка 2<br>Таблицы 2</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 5</td>
+            <td class="bold-left bold-bottom">Заголовок 4<br>Таблицы 2</td>
+            <td colspan="2" class="bold-right bold-bottom">Ячейка 3<br>Таблицы 2</td>
+        </tr>
+    </table>
+
+</body>
+</html>

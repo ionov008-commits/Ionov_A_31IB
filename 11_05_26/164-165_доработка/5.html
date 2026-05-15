@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+    <style>
+        table { border-collapse: collapse; width: 650px; }
+        th, td { border: 1px solid black; padding: 8px; }
+        
+        .no-border-table { border: none; width: 100%; border-collapse: collapse; }
+        .no-border-table td { border: none; padding: 0; }
+        
+        textarea { width: 98%; overflow-y: scroll; resize: none; }
+    </style>
+</head>
+<body>
+    <form action="mailto:name@server.domen" method="post">
+        <center>
+            <table>
+                <tr>
+                    <td align="center"><input type="submit" value="send"></td>
+                    <td align="center">
+                        <button type="button">
+                            кнопка с надписью<br>и рисунком<br>
+                            <img src="images/1.png" alt="pic">
+                        </button>
+                    </td>
+                    <td align="center"><input type="reset" value="reset"></td>
+                </tr>
+
+                <tr>
+                    <td width="30%">Вопрос 1</td>
+                    <td align="center"><input type="text" style="width: 90%;"></td>
+                    <td align="center"><input type="text" style="width: 90%;"></td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 2</td>
+                    <td align="center"><input type="checkbox"> Ответ 2.1</td>
+                    <td align="center"><input type="checkbox"> Ответ 2.2</td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 3</td>
+                    <td colspan="2">
+                        <table class="no-border-table">
+                            <tr>
+                                <td style="padding-right: 10px;">
+                                    <input type="text" id="file_path" style="width: 100%;" readonly>
+                                </td>
+                                <td width="80">
+                                    <input type="file" id="real_file" style="display: none;" onchange="document.getElementById('file_path').value = this.value;">
+                                    <input type="button" value="Обзор" style="width: 100%;" onclick="document.getElementById('real_file').click();">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 4</td>
+                    <td colspan="2" align="center">
+                        <select style="width: 60%;">
+                            <option>Ответ 4.1</option>
+                            <option>Ответ 4.2</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 5</td>
+                    <td align="center"><input type="radio" name="q5"> Ответ 5.1</td>
+                    <td align="center"><input type="radio" name="q5"> Ответ 5.2</td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 6</td>
+                    <td colspan="2" align="center">
+                        <select multiple size="3" style="width: 50%; overflow: hidden;">
+                            <option>Ответ 6.1</option>
+                            <option>Ответ 6.2</option>
+                            <option>Ответ 6.3</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Дополнительная информация</td>
+                    <td colspan="2">
+                        <textarea rows="4"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </form>
+</body>
+</html>

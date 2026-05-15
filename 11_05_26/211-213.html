@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная верстка </title>
+    <style type="text/css">
+        div { font-family: Arial, sans-serif;
+        text-align: center; }
+        body { display: grid;
+                height: 98%; }
+
+        @media only screen and (max-width: 360px)
+        {/* 1 медиазапрос*/
+        body { font-size: 2vh;
+            grid-template-areas:"header"
+                                "nav"
+                                "content"
+                                "sidebar"
+                                "footer";
+            grid-template-rows: 60px 60px 1fr 40px 60px;
+            grid-template-columns: 1fr; }
+        }
+
+        @media only screen and (min-width: 361px) and (max-width:
+        760px) {/* 2 медиазапрос */
+        body { font-size: 2vh;
+        grid-template-areas:"header header"
+                            "nav sidebar"
+                            "content content"
+                            "footer footer";
+        grid-template-rows: 100px 1fr 3fr 100px;
+        grid-template-columns: 3fr 1fr; }
+    }
+
+    @media only screen and (min-width: 761px) and (orientation:
+    portrait) {/* 3 медиазапрос */
+    body { font-size: 2vh;
+    grid-template-areas:"header header"
+                        "nav content"
+                        "sidebar content"
+                        "footer footer";
+    grid-template-rows: 100px 2fr 1fr 100px;
+    grid-template-columns: 1fr 2fr; }
+    }
+
+    @media only screen and (min-width: 761px) and (max-width:
+    1200px) and (orientation: landscape) {/* 4 медиазапрос */
+    body { font-size: 4vh;
+    grid-template-areas:"header header header"
+                        "nav content content"
+                        "sidebar content content"
+                        "footer footer footer";
+    grid-template-rows: 100px 3fr 1fr 100px;
+    grid-template-columns: 1fr 2fr 2fr; }
+    }
+
+    @media only screen and (min-width: 1201px) {
+    body { font-size: 4vh;
+    grid-template-areas:"header header header"
+                        "nav content sidebar"
+                        "nav content ."
+                        "footer footer footer";
+    grid-template-rows: 100px auto 300px 100px;
+    grid-template-columns: 1fr 3fr 0.5fr;   }
+    }
+    #header { border: 5px solid blue;
+    grid-area: header; }
+    #nav { border: 5px solid lime;
+    grid-area: nav; }
+    #sidebar { border: 5px solid aqua;
+    grid-area: sidebar; }
+    #content { border: 5px solid yellow;
+    grid-area: content; }
+    #footer { border: 5px solid red;
+    grid-area: footer; }
+
+    </style>
+    </head>
+<body>
+    <div id="header"> header (шапка сайта) </div>
+    <div id="nav"> меню навигации 
+        <ul>
+            <li><a href="prim_iz_prakt_05_05_26/1.html" target="work-frame">1</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/2.html" target="work-frame">2</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/3.html" target="work-frame">3</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/4.html" target="work-frame">4</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/5.html" target="work-frame">5</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/6.html" target="work-frame">6</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/7.html" target="work-frame">7</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/8.html" target="work-frame">8</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/9.html" target="work-frame">9</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/10.html" target="work-frame">10</a></li>
+            <li><a href="prim_iz_prakt_05_05_26/11.html" target="work-frame">11</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <iframe name="work-frame" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div id="sidebar"> доп. панель </div>
+    <div id="footer"> footer (подвал) </div>
+</body>
+</html>
