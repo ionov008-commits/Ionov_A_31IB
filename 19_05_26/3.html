@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Отдыхай с пользой</title>
+    <style>
+        body { background-color: bisque; font-family: "Sitka Text", Georgia, serif; }
+        h1 { color: red; text-align: center; font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        .intro { 
+            font-style: italic; 
+            font-weight: bold; 
+        }
+
+        .question { 
+            font-style: italic; 
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+    function res(){
+        var N = 0;
+
+        if(document.test.q1[0].checked) N = N + 5;
+        if(document.test.q1[1].checked) N = N + 10;
+        if(document.test.q1[2].checked) N = N + 0;
+        if(document.test.q1[3].checked) N = N + 15;
+        if (!document.test.q1[0].checked && 
+         !document.test.q1[1].checked && 
+         !document.test.q1[2].checked && 
+         !document.test.q1[3].checked) {
+        alert("Пожалуйста, ответьте на первый вопрос!");
+        return;
+        }
+
+        if(document.test.q2[0].checked) N = N + 5;
+        if(document.test.q2[1].checked) N = N + 10;
+        if(document.test.q2[2].checked) N = N + 0;
+        if(document.test.q2[3].checked) N = N + 15;
+        if (!document.test.q2[0].checked && 
+         !document.test.q2[1].checked && 
+         !document.test.q2[2].checked && 
+         !document.test.q2[3].checked) {
+        alert("Пожалуйста, ответьте на второй вопрос!");
+        return;
+        }
+
+        if(document.test.q3[0].checked) N = N + 5;
+        if(document.test.q3[1].checked) N = N + 10;
+        if(document.test.q3[2].checked) N = N + 0;
+        if(document.test.q3[3].checked) N = N + 15;
+        if (!document.test.q3[0].checked && 
+         !document.test.q3[1].checked && 
+         !document.test.q3[2].checked && 
+         !document.test.q3[3].checked) {
+        alert("Пожалуйста, ответьте на третий вопрос!");
+        return;
+        }
+
+        if(document.test.q4[0].checked) N = N + 5;
+        if(document.test.q4[1].checked) N = N + 10;
+        if(document.test.q4[2].checked) N = N + 0;
+        if(document.test.q4[3].checked) N = N + 15;
+        if (!document.test.q4[0].checked && 
+         !document.test.q4[1].checked && 
+         !document.test.q4[2].checked && 
+         !document.test.q4[3].checked) {
+        alert("Пожалуйста, ответьте на четвертый вопрос!");
+        return;
+        }
+
+        if(document.test.q5[0].checked) N = N + 5;
+        if(document.test.q5[1].checked) N = N + 10;
+        if(document.test.q5[2].checked) N = N + 0;
+        if(document.test.q5[3].checked) N = N + 15;
+        if (!document.test.q5[0].checked && 
+         !document.test.q5[1].checked && 
+         !document.test.q5[2].checked && 
+         !document.test.q5[3].checked) {
+        alert("Пожалуйста, ответьте на пятый вопрос!");
+        return;
+        }
+
+        if(document.test.q6[0].checked) N = N + 5;
+        if(document.test.q6[1].checked) N = N + 10;
+        if(document.test.q6[2].checked) N = N + 0;
+        if(document.test.q6[3].checked) N = N + 15;
+        if (!document.test.q6[0].checked && 
+         !document.test.q6[1].checked && 
+         !document.test.q6[2].checked && 
+         !document.test.q6[3].checked) {
+        alert("Пожалуйста, ответьте на шестой вопрос!");
+        return;
+        }
+
+        if(document.test.q7[0].checked) N = N + 5;
+        if(document.test.q7[1].checked) N = N + 10;
+        if(document.test.q7[2].checked) N = N + 0;
+        if(document.test.q7[3].checked) N = N + 15;
+        if (!document.test.q7[0].checked && 
+         !document.test.q7[1].checked && 
+         !document.test.q7[2].checked && 
+         !document.test.q7[3].checked) {
+        alert("Пожалуйста, ответьте на седьмой вопрос!");
+        return;
+        }
+
+        if(document.test.q8[0].checked) N = N + 5;
+        if(document.test.q8[1].checked) N = N + 10;
+        if(document.test.q8[2].checked) N = N + 0;
+        if(document.test.q8[3].checked) N = N + 15;
+        if (!document.test.q8[0].checked && 
+         !document.test.q8[1].checked && 
+         !document.test.q8[2].checked && 
+         !document.test.q8[3].checked) {
+        alert("Пожалуйста, ответьте на восьмой вопрос!");
+        return;
+        }
+
+        if(document.test.q9[0].checked) N = N + 5;
+        if(document.test.q9[1].checked) N = N + 10;
+        if(document.test.q9[2].checked) N = N + 0;
+        if(document.test.q9[3].checked) N = N + 15;
+        if (!document.test.q9[0].checked && 
+         !document.test.q9[1].checked && 
+         !document.test.q9[2].checked && 
+         !document.test.q9[3].checked) {
+        alert("Пожалуйста, ответьте на девятый вопрос!");
+        return;
+        }
+
+        document.test.result.value = " Ваш результат " + N + " баллов";
+        if(N<35) document.test.comment.value="Вы совершенно не имеете понятия, куда девать свободное время. Вам кажется, что часы и минуты тянутся слишком медленно. Часто вы просто слоняетесь из угла в угол и скучаете и втайне сожалеете, что так происходит. Срочно необходимо преодолеть внутреннюю лень.";
+        if(N>=35 & N<70) document.test.comment.value="В принципе вы знаете, как с пользой и удовольствием провести свой досуг. Но вам постоянно нужен толчок или стимул, чтобы вы смогли преодолеть инертность. Вы постоянно ждете, когда вам кто-нибудь предложит заняться интересным делом. Попробуйте хоть раз сами организовать свой отдых от начала до конца.";
+        if(N>=70 & N<105) document.test.comment.value="Вам не следует опасаться за свое свободное время. Оно проходит всегда с пользой для дела. Такое ощущение, что вас хватает на всех и на все. Правда, иногда чересчур активный жизненный ритм начинает напрягать, тогда хочется плюнуть на все и залечь на диване. Что ж, надо научиться выкраивать время для того, чтобы побыть в гордом одиночестве.";
+        if(N>=105) document.test.comment.value="Как видно, вы скучать не умеете. Вам не хватает даже суток, чтобы осуществить все задуманное. Отдых для вас стал превыше всего. Вам следует почаще вспоминать, что делу время, потехе час.";
+    }
+    </script>
+</head>
+<body>
+    <h1>Отдыхай с пользой</h1>
+    <img src="images/chill.gif" alt="chill" style="width: 200px; float: right; margin-left: 15px;" title="chill">
+    
+    <p class="intro">Вам слишком часто бывает скучно, но увы. Вы совершенно не хотите действовать, а ждёте, когда вам что-нибудь предложат. Или все же предпочитаете брать инициативу в свои руки? Попробуйте ответить на приведенные ниже вопросы и узнать от чего вы больше получаете удовольствие и как лучше проводить свой досуг.</p>
+    
+    <form name="test">
+    <ol>
+
+    <li>
+        <p class="question">Вы решили организовать совместную вечеринку. Какую работу вы возьметесь выполнить?</p>
+        <label><input type="radio" name="q1"> а) Ту, которую поручат;</label><br>
+        <label><input type="radio" name="q1"> б) ту, которая доставляет удовольствие;</label><br>
+        <label><input type="radio" name="q1"> в) постараюсь отвязаться от этого;</label><br>
+        <label><input type="radio" name="q1"> г) всю — от сценария до воплощения.</label>
+    </li>
+
+    <li>
+        <p class="question">До выходных осталось всего ничего. Вы уже знаете, как их проведете?</p>
+        <label><input type="radio" name="q2"> а) Конечно. Сначала посмотрю телевизор, а потом проведу время со своими друзьями.</label><br>
+        <label><input type="radio" name="q2"> б) Я еще об этом не думал. Ближе к делу станет ясно.</label><br>
+        <label><input type="radio" name="q2"> в) Ни малейшей идеи. Наверное, как обычно, буду сидеть дома.</label><br>
+        <label><input type="radio" name="q2"> г) Выходные будут бурными. Кофе, дискотеки, вечеринки...</label>
+    </li>
+    <li>
+        <p class="question">Если бы был выбор, где хотелось бы провести лето?</p>
+        <label><input type="radio" name="q3"> а) В молодежном палаточном лагере.</label><br>
+        <label><input type="radio" name="q3"> б) На Гавайях — заняться серфингом.</label><br>
+        <label><input type="radio" name="q3"> в) В каком-нибудь престижном отеле по системе «все включено».</label><br>
+        <label><input type="radio" name="q3"> г) В опасном путешествии, где-нибудь в джунглях..</label>
+    </li>
+    <li>
+        <p class="question">Как вы будете проводить время с любимым человеком?</p>
+        <label><input type="radio" name="q4"> а) Будем шататься по улицам, зайдем в кафе.</label><br>
+        <label><input type="radio" name="q4"> б) Если пойдет дождь, мы пойдем в кино, будет хорошая погода — погуляем.</label><br>
+        <label><input type="radio" name="q4"> в) Присоединимся к компании или посмотрим новый фильм по «видику».</label><br>
+        <label><input type="radio" name="q4"> г) Будем кататься на скейтборде, роликах или устроим гонки в бассейне.</label>
+    </li>
+    <li>
+        <p class="question">Если твои успехи оставляют желать лучшего, ты нервничаешь по этому поводу?</p>
+        <label><input type="radio" name="q5"> а) Не то слово. Не могу спокойно спать ночью;</label><br>
+        <label><input type="radio" name="q5"> б) да, надо взяться за ум и все исправить;</label><br>
+        <label><input type="radio" name="q5"> в) нет, всегда есть время все исправить;</label><br>
+        <label><input type="radio" name="q5"> г) надо срочно браться за ум пока еще не поздно.</label>
+    </li>
+    <li>
+        <p class="question">У твоего лучшего друга день рождения. Что ты подаришь?</p>
+        <label><input type="radio" name="q6"> а) То, что ему давно хотелось иметь. Об этом узнаю заранее;</label><br>
+        <label><input type="radio" name="q6"> б) что-нибудь сделанное своими руками;</label><br>
+        <label><input type="radio" name="q6"> в) какую-нибудь занятную вещицу из магазина подарков;</label><br>
+        <label><input type="radio" name="q6"> г) это будет грандиозный сюрприз.</label>
+    </li>
+    <li>
+        <p class="question">В каком из этих конкурсов вы бы поучаствовали?</p>
+        <label><input type="radio" name="q7"> а) «Дорисуй картинку и пошли ее по адресу»;</label><br>
+        <label><input type="radio" name="q7"> б) «Допиши рассказ и пошли его по www»;</label><br>
+        <label><input type="radio" name="q7"> в) «Ответь на вопрос и позвони по телефону»;</label><br>
+        <label><input type="radio" name="q7"> г) «Сниму вечеринку на видеопленку и отправь ее по адресу».</label>
+    </li>
+    <li>
+        <p class="question">Вы собрались поехать отдохнуть, но денег на это не хватает. Как поступите?</p>
+        <label><input type="radio" name="q8"> а) Сделаю вид, что болен. Дома поваляться тоже неплохо;</label><br>
+        <label><input type="radio" name="q8"> б) поговорю с любимой тетушкой, она что-нибудь придумает;</label><br>
+        <label><input type="radio" name="q8"> в) останусь дома и найду себе другое развлечение;</label><br>
+        <label><input type="radio" name="q8"> г) постараюсь заработать денег на поездку.</label>
+    </li>
+    <li>
+        <p class="question">Родители вами недовольны. Что бы это могло быть?</p>
+        <label><input type="radio" name="q9"> а) Да я ведро мусорное забываю выносить;</label><br>
+        <label><input type="radio" name="q9"> б) у меня в комнате бардак невероятный;</label><br>
+        <label><input type="radio" name="q9"> в) у меня счет за мобильник зашкаливает;</label><br>
+        <label><input type="radio" name="q9"> г) в последнее время прихожу домой только поесть и переодеться.</label>
+    </li>
+
+    </ol>
+
+    <br>
+    <input type="button" value="Подсчитать баллы" onclick="res()">
+    <input type="text" name="result" readonly size="30" style="margin-left: 10px;"><br><br>
+    <textarea name="comment" readonly rows="6" cols="60" style="display:block; font-family: sans-serif; resize: none;"></textarea>
+    </form>
+</body>
+</html>
