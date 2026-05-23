@@ -18,123 +18,41 @@
             margin-top: 20px;
         }
     </style>
-    <script>
-    function res(){
+<script>
+    function res() {
+        // Веса для вариантов ответов: а=5, б=10, в=0, г=15
+        var weights = [5, 10, 0, 15];
         var N = 0;
 
-        if(document.test.q1[0].checked) N = N + 5;
-        if(document.test.q1[1].checked) N = N + 10;
-        if(document.test.q1[2].checked) N = N + 0;
-        if(document.test.q1[3].checked) N = N + 15;
-        if (!document.test.q1[0].checked && 
-         !document.test.q1[1].checked && 
-         !document.test.q1[2].checked && 
-         !document.test.q1[3].checked) {
-        alert("Пожалуйста, ответьте на первый вопрос!");
-        return;
-        }
+        for (var i = 1; i <= 9; i++) {
+            var question = document.test["q" + i];
+            var answered = false;
 
-        if(document.test.q2[0].checked) N = N + 5;
-        if(document.test.q2[1].checked) N = N + 10;
-        if(document.test.q2[2].checked) N = N + 0;
-        if(document.test.q2[3].checked) N = N + 15;
-        if (!document.test.q2[0].checked && 
-         !document.test.q2[1].checked && 
-         !document.test.q2[2].checked && 
-         !document.test.q2[3].checked) {
-        alert("Пожалуйста, ответьте на второй вопрос!");
-        return;
-        }
+            for (var j = 0; j < question.length; j++) {
+                if (question[j].checked) {
+                    N += weights[j];
+                    answered = true;
+                    break;
+                }
+            }
 
-        if(document.test.q3[0].checked) N = N + 5;
-        if(document.test.q3[1].checked) N = N + 10;
-        if(document.test.q3[2].checked) N = N + 0;
-        if(document.test.q3[3].checked) N = N + 15;
-        if (!document.test.q3[0].checked && 
-         !document.test.q3[1].checked && 
-         !document.test.q3[2].checked && 
-         !document.test.q3[3].checked) {
-        alert("Пожалуйста, ответьте на третий вопрос!");
-        return;
-        }
-
-        if(document.test.q4[0].checked) N = N + 5;
-        if(document.test.q4[1].checked) N = N + 10;
-        if(document.test.q4[2].checked) N = N + 0;
-        if(document.test.q4[3].checked) N = N + 15;
-        if (!document.test.q4[0].checked && 
-         !document.test.q4[1].checked && 
-         !document.test.q4[2].checked && 
-         !document.test.q4[3].checked) {
-        alert("Пожалуйста, ответьте на четвертый вопрос!");
-        return;
-        }
-
-        if(document.test.q5[0].checked) N = N + 5;
-        if(document.test.q5[1].checked) N = N + 10;
-        if(document.test.q5[2].checked) N = N + 0;
-        if(document.test.q5[3].checked) N = N + 15;
-        if (!document.test.q5[0].checked && 
-         !document.test.q5[1].checked && 
-         !document.test.q5[2].checked && 
-         !document.test.q5[3].checked) {
-        alert("Пожалуйста, ответьте на пятый вопрос!");
-        return;
-        }
-
-        if(document.test.q6[0].checked) N = N + 5;
-        if(document.test.q6[1].checked) N = N + 10;
-        if(document.test.q6[2].checked) N = N + 0;
-        if(document.test.q6[3].checked) N = N + 15;
-        if (!document.test.q6[0].checked && 
-         !document.test.q6[1].checked && 
-         !document.test.q6[2].checked && 
-         !document.test.q6[3].checked) {
-        alert("Пожалуйста, ответьте на шестой вопрос!");
-        return;
-        }
-
-        if(document.test.q7[0].checked) N = N + 5;
-        if(document.test.q7[1].checked) N = N + 10;
-        if(document.test.q7[2].checked) N = N + 0;
-        if(document.test.q7[3].checked) N = N + 15;
-        if (!document.test.q7[0].checked && 
-         !document.test.q7[1].checked && 
-         !document.test.q7[2].checked && 
-         !document.test.q7[3].checked) {
-        alert("Пожалуйста, ответьте на седьмой вопрос!");
-        return;
-        }
-
-        if(document.test.q8[0].checked) N = N + 5;
-        if(document.test.q8[1].checked) N = N + 10;
-        if(document.test.q8[2].checked) N = N + 0;
-        if(document.test.q8[3].checked) N = N + 15;
-        if (!document.test.q8[0].checked && 
-         !document.test.q8[1].checked && 
-         !document.test.q8[2].checked && 
-         !document.test.q8[3].checked) {
-        alert("Пожалуйста, ответьте на восьмой вопрос!");
-        return;
-        }
-
-        if(document.test.q9[0].checked) N = N + 5;
-        if(document.test.q9[1].checked) N = N + 10;
-        if(document.test.q9[2].checked) N = N + 0;
-        if(document.test.q9[3].checked) N = N + 15;
-        if (!document.test.q9[0].checked && 
-         !document.test.q9[1].checked && 
-         !document.test.q9[2].checked && 
-         !document.test.q9[3].checked) {
-        alert("Пожалуйста, ответьте на девятый вопрос!");
-        return;
+            if (!answered) {
+                alert("Пожалуйста, ответьте на " + i + "-й вопрос!");
+                return;
+            }
         }
 
         document.test.result.value = " Ваш результат " + N + " баллов";
-        if(N<35) document.test.comment.value="Вы совершенно не имеете понятия, куда девать свободное время. Вам кажется, что часы и минуты тянутся слишком медленно. Часто вы просто слоняетесь из угла в угол и скучаете и втайне сожалеете, что так происходит. Срочно необходимо преодолеть внутреннюю лень.";
-        if(N>=35 & N<70) document.test.comment.value="В принципе вы знаете, как с пользой и удовольствием провести свой досуг. Но вам постоянно нужен толчок или стимул, чтобы вы смогли преодолеть инертность. Вы постоянно ждете, когда вам кто-нибудь предложит заняться интересным делом. Попробуйте хоть раз сами организовать свой отдых от начала до конца.";
-        if(N>=70 & N<105) document.test.comment.value="Вам не следует опасаться за свое свободное время. Оно проходит всегда с пользой для дела. Такое ощущение, что вас хватает на всех и на все. Правда, иногда чересчур активный жизненный ритм начинает напрягать, тогда хочется плюнуть на все и залечь на диване. Что ж, надо научиться выкраивать время для того, чтобы побыть в гордом одиночестве.";
-        if(N>=105) document.test.comment.value="Как видно, вы скучать не умеете. Вам не хватает даже суток, чтобы осуществить все задуманное. Отдых для вас стал превыше всего. Вам следует почаще вспоминать, что делу время, потехе час.";
+        
+        if (N < 35) {
+            document.test.comment.value = "Вы совершенно не имеете понятия, куда девать свободное время. Вам кажется, что часы и минуты тянутся слишком медленно. Часто вы просто слоняетесь из угла в угол и скучаете и втайне сожалеете, что так происходит. Срочно необходимо преодолеть внутреннюю лень.";
+        } else if (N < 70) {
+            document.test.comment.value = "В принципе вы знаете, как с пользой и удовольствием провести свой досуг. Но вам постоянно нужен толчок или стимул, чтобы вы смогли преодолеть инертность. Вы постоянно ждете, когда вам кто-нибудь предложит заняться интересным делом. Попробуйте хоть раз сами организовать свой отдых от начала до конца.";
+        } else if (N < 105) {
+            document.test.comment.value = "Вам не следует опасаться за свое свободное время. Оно проходит всегда с пользой для дела. Такое ощущение, что вас хватает на всех и на все. Правда, иногда чересчур активный жизненный ритм начинает напрягать, тогда хочется плюнуть на все и залечь на диване. Что ж, надо научиться выкраивать время для того, чтобы побыть в гордом одиночестве.";
+        } else {
+            document.test.comment.value = "Как видно, вы скучать не умеете. Вам не хватает даже суток, чтобы осуществить все задуманное. Отдых для вас стал превыше всего. Вам следует почаще вспоминать, что делу время, потехе час.";
+        }
     }
     </script>
 </head>

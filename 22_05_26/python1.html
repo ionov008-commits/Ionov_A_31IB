@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - p1 (Foundation)</title>
+    
+    <!-- Подключаем CSS Foundation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+    
+    <style>
+        body {
+            padding: 30px 0;
+            background-color: #fff;
+            color: #0a0a0a;
+        }
+        h1 {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #1779ba; /* Голубой цвет заголовков как на скрине */
+            font-size: 2rem;
+            margin-top: 0;
+        }
+        pre {
+            background: #f4f5f6;
+            padding: 12px;
+            border: 1px solid #e6e6e6;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+        code {
+            font-family: Consolas, Monaco, monospace;
+        }
+        .section-row {
+            margin-bottom: 3rem; /* Отступы между смысловыми блоками */
+        }
+        .content-block {
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        
+        <!-- Главный заголовок всей страницы -->
+        <div class="grid-x grid-margin-x section-row">
+            <div class="cell small-12">
+                <h1>HOW-TO: Программа на Python, Часть 1</h1>
+            </div>
+        </div>
+
+        <!-- БЛОК 1: Главное меню слева и Вступление справа -->
+        <div class="grid-x grid-margin-x section-row">
+            <!-- Ссылки на части (левая колонка) -->
+            <div class="cell small-12 medium-4 large-3">
+                <ul>
+                    <li><a href="python1.html"><em>Программа на Python — часть 1</em></a></li>
+                    <li><a href="python2.html"><em>Программа на Python — часть 2</em></a></li>
+                    <li><a href="python3.html"><em>Программа на Python — часть 3</em></a></li>
+                </ul>
+            </div>
+            
+            <!-- Вступление (правая колонка) -->
+            <div class="cell small-12 medium-8 large-9 content-block">
+                <h2>HOW-TO: Программа на Python, Часть 1</h2>
+                <p>Из множества существующих языков программирования Python — один из самых лёгких
+                в изучении. Он создан в конце 80-х годов XX века, но с тех пор он сильно изменился.
+                Хотя Python входит в состав большинства дистрибутивов Linux, на него часто не
+                обращают внимания при выборе языка для изучения. В этой статье мы рассмотрим
+                создание консольных приложений, а в следующей — программирование графических
+                интерфейсов (GUI). Давайте создадим простую программу прямо сейчас.</p>
+            </div>
+        </div>
+
+        <!-- БЛОК 2: Заголовок "Содержание" слева, сами ссылки справа -->
+        <div class="grid-x grid-margin-x section-row">
+            <!-- Заголовок (левая колонка) -->
+            <div class="cell small-12 medium-4 large-3">
+                <h2 id="zag3">Содержание</h2>
+            </div>
+            
+            <!-- Меню содержания (правая колонка) -->
+            <div class="cell small-12 medium-8 large-9 content-block">
+                <ul>
+                    <li><a href="#zag1">Наша первая программа</a></li>
+                    <li><a href="#zag2">Пример цикла For</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- БЛОК 3: Заголовок "Наша первая программа" слева, листинг и описание справа -->
+        <div class="grid-x grid-margin-x section-row">
+            <!-- Заголовок и ссылка назад (левая колонка) -->
+            <div class="cell small-12 medium-4 large-3">
+                <h2 id="zag1">Наша первая программа</h2>
+                <a href="#zag3">К содержанию</a>
+            </div>
+            
+            <!-- Контент программы (правая колонка) -->
+            <div class="cell small-12 medium-8 large-9 content-block">
+                <p>Наберём код в текстовом редакторе (например, в gedit). Потом мы разберёмся, что делает
+                каждая строка и пойдём дальше.<br><br>
+                Введите эти 4 строки:</p>
+                
+<pre><code>#!/usr/bin/env python
+print 'Hello. I am a python program.'
+name = raw_input("What is your name?")
+print "Hello there, " + name + "!"</code></pre>
+
+                <p>Это всё. Сохраните файл как <strong>hello.py</strong> в любом месте. Я предлагаю сохранить его в папке
+                <strong>python_examples</strong> в домашнем каталоге. Этот пример показывает, как просто написать
+                программу на Python. Для запуска программы нужно сделать её файл исполняемым. Для
+                этого введите в терминале:<br><br>
+                <code><strong>chmod +x hello.py</strong></code><br><br>
+                в папке, в которой вы сохранили программу. Теперь запустите её.</p>
+                
+<pre><code>greg@earth:~/python_examples$ ./hello.py
+Hello. I am a python program.
+What is your name? Ferd Burphel
+Hello there, Ferd Burphel!
+greg@earth:~/python_examples$</code></pre>
+                
+                <p>Вот и всё.</p>
+            </div>
+        </div>
+
+        <!-- БЛОК 4: Заголовок "Пример цикла FOR" слева, код цикла справа -->
+        <div class="grid-x grid-margin-x section-row">
+            <!-- Заголовок и ссылка назад (левая колонка) -->
+            <div class="cell small-12 medium-4 large-3">
+                <h2 id="zag2">Пример цикла FOR</h2>
+                <a href="#zag3">К содержанию</a>
+            </div>
+            
+            <!-- Контент цикла (правая колонка) -->
+            <div class="cell small-12 medium-8 large-9 content-block">
+                <p>Теперь давайте рассмотрим пример программирования цикла. Запустите текстовый
+                редактор и наберите следующую программу:</p>
+                
+<pre><code>#!/usr/bin/env python
+for cntr in range(0,10):
+    print cntr</code></pre>
+                
+                <p><em>Не забудьте поставить символ табуляции перед строкой «print cntr».</em> Это важно. В
+                Python для указания на блоки кода используются не круглые «(» и фигурные «{» скобки
+                как в других языках программирования, а отступы.</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Скрипты фреймворка -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>

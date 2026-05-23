@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блочный сайт</title>
+    <!-- Подключаем базовый CSS Bootstrap для стилизации компонентов -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -11,41 +13,50 @@
             padding: 0;
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: var(--bs-body-font-family);
             font-size: 14px;
-            background-color: #f5f5f5;
-            padding: 15px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            color: #212529;
         }
 
         #container {
             display: grid;
-            grid-template-columns: 220px 1fr 200px; 
-            grid-template-rows: auto minmax(550px, auto) auto;
+            grid-template-columns: 240px 1fr 220px; 
+            grid-template-rows: auto minmax(600px, auto) auto;
             grid-template-areas: 
                 "header header header"
                 "sidebar content promo"
                 "footer footer footer";
-            gap: 10px;
-            max-width: 1300px;
+            gap: 15px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
+        /* Общие стили для всех секций в стиле карточек Bootstrap */
+        #header, #sidebar, #content, #promo, #footer {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+        }
+
         #header {
-           grid-area: header;
-           background-color: #fff;
-           border: 3px solid orange;
-           padding: 10px 15px;
-           display: flex;
-           align-items: center;
-           position: relative;
+            grid-area: header;
+            border-left: 5px solid #ffc107; /* Мягкий желтый вместо orange */
+            display: flex;
+            align-items: center;
+            position: relative;
+            min-height: 70px;
         }
 
         #header img {
-           height: 50px;
+            height: 45px;
         }
 
         #header h1 {
-            font-size: 18px;
+            font-size: 1.25rem;
+            font-weight: 600;
             position: absolute;  
             left: 50%;        
             transform: translateX(-50%); 
@@ -54,71 +65,106 @@
 
         #sidebar {
             grid-area: sidebar;
-            background-color: #fff;
-            border: 3px solid red;
-            padding: 15px;
+            border-left: 5px solid #dc3545; /* Красный Bootstrap */
         }
         #sidebar h3 {
-            margin-bottom: 10px;
-            font-size: 15px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 3px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+            color: #495057;
         }
         #sidebar ul {
             list-style: none;
         }
         #sidebar li {
+            margin-bottom: 6px;
+        }
+        
+        /* Стилизация деталей и ссылок под Bootstrap-меню */
+        #sidebar details {
+            background-color: #f8f9fa;
+            border-radius: 6px;
             margin-bottom: 8px;
+            border: 1px solid #e9ecef;
+        }
+        #sidebar summary {
+            cursor: pointer;
+            font-weight: 500;
+            padding: 8px 12px;
+            color: #333;
+            transition: background 0.2s;
+            border-radius: 6px;
+        }
+        #sidebar summary:hover {
+            background-color: #e9ecef;
+        }
+        #sidebar details[open] summary {
+            border-bottom: 1px solid #e9ecef;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: #e9ecef;
         }
         #sidebar a {
-            color: #0066cc;
+            color: #0d6efd;
             text-decoration: none;
+            display: block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            transition: all 0.2s;
         }
         #sidebar a:hover {
-            text-decoration: underline;
+            background-color: #e7f1ff;
+            color: #0a58ca;
+            text-decoration: none;
         }
 
         #content {
             grid-area: content;
-            background-color: #fff;
-            border: 3px solid green;
+            border-left: 5px solid #198754; /* Зеленый Bootstrap */
             padding: 10px;
         }
         #content object {
             width: 100%;
             height: 100%;
-            min-height: 550px;
+            min-height: 600px;
             border: none;
+            border-radius: 4px;
         }
 
         #promo {
             grid-area: promo;
-            background-color: #fff;
-            border: 3px solid #7a43b6;
-            padding: 10px;
+            border-left: 5px solid #6f42c1; /* Пурпурный Bootstrap */
             text-align: center;
         }
         #promo h3 {
-            font-size: 14px;
-            margin-bottom: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #495057;
         }
         .reklama-banner {
             width: 100%;
-            border: 2px dashed #7a43b6;
+            border: 2px dashed #6f42c1;
+            border-radius: 6px;
             display: block;
             margin: 0 auto;
         }
 
         #footer {
             grid-area: footer;
-            background-color: #fff;
-            border: 3px solid aqua;
-            padding: 10px;
+            border-left: 5px solid #0dcaf0; /* Аква/Голубой Bootstrap */
             text-align: center;
-            font-weight: bold;
+            font-weight: 500;
+            color: #6c757d;
         }
 
-        @media (max-width: 800px) {
+        /* Адаптивность для мобилок */
+        @media (max-width: 992px) {
+            body {
+                padding: 10px;
+            }
             #container {
                 grid-template-columns: 1fr;
                 grid-template-areas: 
@@ -127,6 +173,13 @@
                     "content"
                     "promo"
                     "footer";
+                gap: 10px;
+            }
+            #header h1 {
+                position: static;
+                transform: none;
+                margin-left: 15px;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -143,32 +196,105 @@
     <nav id="sidebar">
         <h3>Мои работы</h3>
         <ul>
-            <li><a href="intro.html" target="lab-target">Главная</a></li>
-            <li><a href="../11_05_26/164-165_доработка/index.html" target="lab-target">Задание 1 (11.05)</a></li>
-            <li><a href="../11_05_26/176-177_отладка/2.html" target="lab-target">Задание 2 (11.05)</a></li>
-            <li><a href="../11_05_26/211-213.html" target="lab-target">Задание 3 (11.05)</a></li>
+            <li style="margin-bottom: 10px;">
+                <a href="intro.html" target="lab-target" class="fw-bold bg-light border text-dark text-center py-2">Главная</a>
+            </li>
 
-            <li><a href="../12_05_26/1.html" target="lab-target">Задание 1 (12.05)</a></li>
-            <li><a href="../12_05_26/2.html" target="lab-target">Задание 2 (12.05)</a></li>
-            <li><a href="../12_05_26/3.html" target="lab-target">Задание 3 (12.05)</a></li>
-            <li><a href="../12_05_26/4.html" target="lab-target">Задание 4 (12.05)</a></li>
-            
-            <li><a href="../13_05_26/index1.html" target="lab-target">Индекс 1 (13.05)</a></li>
-            <li><a href="../13_05_26/index2.html" target="lab-target">Индекс 2 (13.05)</a></li>
-            <li><a href="../13_05_26/index3.html" target="lab-target">Индекс 3 (13.05)</a></li>
-            
-            <li><a href="../14_05_26/python1.html" target="lab-target">Python 1 (14.05)</a></li>
-            <li><a href="../14_05_26/python2.html" target="lab-target">Python 2 (14.05)</a></li>
-            <li><a href="../14_05_26/python3.html" target="lab-target">Python 3 (14.05)</a></li>
-            <li><a href="../14_05_26/testovoe/main.html" target="lab-target">Тестовое задание (14.05)</a></li>
-            
-            <li><a href="../15_05_26/1.html" target="lab-target">Задание 1 (15.05)</a></li>
-            <li><a href="../16_05_26/python1.html" target="lab-target">Задание 1(16.05)</a></li>            
-            <li><a href="../16_05_26/2.html" target="lab-target">Задание 2 (16.05)</a></li>
-            <li><a href="../16_05_26/3.html" target="lab-target">Задание 3 (16.05)</a></li>
-            <li><a href="../16_05_26/4.html" target="lab-target">Задание 4 (16.05)</a></li>
-            <li><a href="../16_05_26/5.html" target="lab-target">Задание 5 (16.05)</a></li>
-            <li><a href="../16_05_26/test.html" target="lab-target">Тест (16.05)</a></li>
+            <li>
+                <details>
+                    <summary>Верстка</summary>
+                    <ul class="py-1">
+                        <li><a href="../11_05_26/poyasn.html" target="lab-target">Пояснение</a></li>
+                        <li><a href="../11_05_26/164-165_доработка/index.html" target="lab-target">Задание 1</a></li>
+                        <li><a href="../11_05_26/176-177_отладка/2.html" target="lab-target">Задание 2</a></li>
+                        <li><a href="../11_05_26/211-213.html" target="lab-target">Задание 3</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Теги и атрибуты</summary>
+                    <ul class="py-1">
+                        <li><a href="../12_05_26/1.html" target="lab-target">Задание 1</a></li>
+                        <li><a href="../12_05_26/2.html" target="lab-target">Задание 2</a></li>
+                        <li><a href="../12_05_26/3.html" target="lab-target">Задание 3</a></li>
+                        <li><a href="../12_05_26/4.html" target="lab-target">Задание 4</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Мультимедиа</summary>
+                    <ul class="py-1">
+                        <li><a href="../13_05_26/index1.html" target="lab-target">Индекс 1</a></li>
+                        <li><a href="../13_05_26/index2.html" target="lab-target">Индекс 2</a></li>
+                        <li><a href="../13_05_26/index3.html" target="lab-target">Индекс 3</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Таблицы и ссылки</summary>
+                    <ul class="py-1">
+                        <li><a href="../14_05_26/python1.html" target="lab-target">Python 1</a></li>
+                        <li><a href="../14_05_26/python2.html" target="lab-target">Python 2</a></li>
+                        <li><a href="../14_05_26/python3.html" target="lab-target">Python 3</a></li>
+                        <li><a href="../14_05_26/testovoe/main.html" target="lab-target">Тестовое задание</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Формы</summary>
+                    <ul class="py-1">
+                        <li><a href="../15_05_26/1.html" target="lab-target">Задание 1</a></li>
+                        <li><a href="../15_05_26/2.html" target="lab-target">Задание 2</a></li>
+                    </ul>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Введение в CSS</summary>
+                    <ul class="py-1">
+                        <li><a href="../16_05_26/python1.html" target="lab-target">Задание 1</a></li>            
+                        <li><a href="../16_05_26/2.html" target="lab-target">Задание 2</a></li>
+                        <li><a href="../16_05_26/3.html" target="lab-target">Задание 3</a></li>
+                        <li><a href="../16_05_26/4.html" target="lab-target">Задание 4</a></li>
+                        <li><a href="../16_05_26/5.html" target="lab-target">Задание 5</a></li>
+                        <li><a href="../16_05_26/test.html" target="lab-target">Тест</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>JS</summary>
+                    <ul class="py-1">
+                        <li><a href="../19_05_26/3.html" target="lab-target">Отчётное</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Bootstrap & jQuery</summary>
+                    <ul class="py-1">
+                        <li><a href="../21_05_26/1.html" target="lab-target">Задание 1</a></li>
+                        <li><a href="../21_05_26/3.html" target="lab-target">Задание 2</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>
+                <details>
+                    <summary>Frameworks</summary>
+                    <ul class="py-1">
+                        <li><a href="../22_05_26/python1.html" target="lab-target">Задание 1</a></li>
+                    </ul>
+                </details>
+            </li>
         </ul>
     </nav>
 
@@ -179,7 +305,7 @@
     <aside id="promo">
         <h3>Рекламный блок</h3>
         <img src="images/reklama.gif" alt="Реклама" class="reklama-banner">
-        <audio controls src="audio/lowcortisol.mp3" style="width: 100%; margin-top: 10px;">
+        <audio controls src="audio/lowcortisol.mp3" style="width: 100%; margin-top: 15px;">
             Ваш браузер не поддерживает аудио-тег.
         </audio>
     </aside>
