@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+        var num = 1000;
+        var count = 0;
+        while(num>=50){
+            num /= 2;
+            count++;
+        }
+        document.getElementById('iteration').innerText = count.toFixed(2);
+        document.getElementById('nums').innerText = num.toFixed(2);
+    }
+    </script>
+</head>
+<body>
+    <h1 onClick="f1();">start</h1>
+    <p>Количество итераций: 
+        <span id="iteration">0</span>
+    </p>
+    <p>Значение num: 
+        <span id="nums">0</span>
+    </p>
+</body>
+</html>
