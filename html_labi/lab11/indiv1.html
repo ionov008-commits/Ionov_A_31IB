@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет сопротивления цепи</title>
+    <script>
+        function f1() {
+        let r1 = parseFloat(document.getElementById('r1').value);
+        let r2 = parseFloat(document.getElementById('r2').value);
+        let total = r1 + r2;
+        document.getElementById('result').innerText = total.toFixed(2);
+    }
+    </script>
+</head>
+<body>
+    <center><h1 onMouseMove="f1();">Цепочка</h1></center>
+    
+    <p>Введите исходные данные:</p>
+    
+    <label>Величина первого сопротивления (См) →</label>
+    <input type="number" id="r1" value="15" step="any"><br><br>
+    
+    <label>Величина второго сопротивления (См) →</label>
+    <input type="number" id="r2" value="27.3" step="any"><br><br>
+    
+    <p>Сопротивление цепи (последовательное соединение) : 
+        <span id="result">42.30</span> см.
+    </p>
+</body>
+</html>
