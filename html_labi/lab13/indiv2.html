@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="schoolButton">Вы закончили школу?</button>
+    
+    <script>
+        var audio = new Audio('audio/lowcortisol.mp3');
+        
+        document.getElementById('schoolButton').onclick = function() {
+            let endsch = confirm('Вы закончили школу?');
+            
+            if(endsch == true){
+                audio.play()
+            } else {
+                alert('Ну и учись школота');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="zima" hidden><img src="images/winter.jpg"></div>
+    <div id="vesna" hidden><img src="images/spring.jpg"></div>
+    <div id="leto" hidden><img src="images/summer.jpg"></div>
+    <div id="osen" hidden><img src="images/autumn.jpg"></div>
+    <script>
+        var now = new Date()
+        var month = now.getMonth()
+        if (month === 11 || month === 0 || month === 1) {
+            zima.hidden = false;
+        } else if (month >= 2 && month <= 4) {
+            vesna.hidden = false;
+        } else if (month >= 5 && month <= 7) {
+            leto.hidden = false;
+        } else if (month >= 8 && month <= 10) {
+            osen.hidden = false;
+        }
+    </script>
+</body>
+</html>
