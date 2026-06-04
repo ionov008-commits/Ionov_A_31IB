@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mass1 = [0, 1, 2];
+        let mass2 = [3, 4, 5];
+
+        document.write(mass1,"<br>")
+        document.write(mass2,"<br>")
+
+        let mass3 = new Array(0, 1, 2);
+        let mass4 = new Array(3, 4, 5);
+
+        document.write(mass3,"<br>")
+        document.write(mass4,"<br>")
+
+        let arr1 = new Array(10);
+        let arr2 = new Array("red", "yellow", "green");
+
+        document.write(arr2, "<br>")
+
+        let arr3 = new Array();
+        arr3[5] = 15;
+
+        document.write(arr3, "<br>")
+
+        let arr4 = new Array();
+        arr4[0] = [15, 'text', false];
+        arr4[2] = [true, 0, 'ohae kotakbas'];
+
+        document.write(arr4, "<br>")
+
+        arr4[3] = []; // создан массив, иначе оно не работает (ошибка: arr4[3] === undefined)
+        arr4[3][5] = 100;
+
+        document.write(arr4, "<br>")
+
+        let arr5 = new Array();
+        arr5 = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6], [3, 4, 5, 6, 7]];
+
+        document.write(arr5, "<br>")
+
+        arr2[5] = 'violet';
+
+        document.write(arr2, "<br>")
+
+        let count = arr2.length;
+
+        arr2.length = 1;
+        arr2.length = 2
+
+        document.write(arr2, "<br>")
+
+    </script>
+</body>
+</html>
