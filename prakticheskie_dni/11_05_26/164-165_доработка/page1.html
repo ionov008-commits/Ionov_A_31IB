@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блочная верстка - Диалог</title>
+    <style type="text/css">
+        body { font-family: Arial, sans-serif; font-size: 14px; }
+        #container { margin: auto; text-align: center; width: 80%; }
+        #header { border: 5px solid orange; height: 80px; margin-bottom: 5px; }
+        #sidebar { border: 5px solid red; float: left; width: 20%; text-align: left; box-sizing: border-box; padding: 10px; }
+        #sidebar a { display: block; margin-bottom: 10px; color: blue; text-decoration: none; }
+        #sidebar a:hover { text-decoration: underline; }
+        #content { border: 5px solid green; float: right; width: 79%; box-sizing: border-box; padding: 20px; text-align: left; min-height: 500px; }
+        #footer { border: 5px solid aqua; height: 50px; margin-top: 5px; clear: both; }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header"> header (шапка сайта) </div>
+    <div id="sidebar">
+        <b>Навигация:</b><br><br>
+        <a href="index.html">Главная страница</a>
+        <a href="page1.html">Задание 1 (Диалог)</a>
+        <a href="page2.html">Задания 2-3 (Список)</a>
+        <a href="page3.html">Задание 4 (Таблица)</a>
+        <a href="page4.html">Задание 5 (Форма)</a>
+        <a href="page5.html">Задание 6 (Фреймы)</a>
+    </div>
+    <div id="content">
+        <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Диалог</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        marquee { border: 1px solid black; padding: 5px; }
+        
+        .title-container { text-align: center; margin: 20px 0; }
+        .title-container span { font-weight: bold; }
+
+        .line-1 { font-family: "Courier New", Courier, monospace; color: red; font-size: 14px; }
+        .line-2 { font-family: monospace; text-align: right; }
+        .line-3 { font-style: italic; }
+        .line-5 { text-decoration: line-through; }
+        .line-6 { text-align: center; font-size: 2em; font-weight: bold; margin: 10px 0; cursor: pointer; }
+        .line-7 { text-decoration: underline; font-size: 1.5em; }
+        .line-8 { font-size: 2em; white-space: nowrap; }
+        .line-9 { font-family: monospace; }
+
+        sup { font-size: 0.6em; color: gray; margin-right: 5px; }
+        easter-egg-player { display: block; margin: 10px auto; height: 30px; }
+    </style>
+</head>
+<body>
+
+    <marquee>Тематический контроль: Работа с текстом и форматированием.</marquee>
+
+    <div class="title-container">
+        <span style="color:red; font-size:48px;">B</span><span style="color:blue; font-size:24px;">U</span><span style="color:green; font-size:56px;">Y</span><span style="color:orange; font-size:18px;">I</span><span style="color:purple; font-size:40px;">N</span><span style="color:navy; font-size:32px;">G</span> 
+        <span style="color:red; font-size:56px;">A</span> 
+        <span style="color:teal; font-size:48px;">M</span><span style="color:maroon; font-size:24px;">E</span><span style="color:olive; font-size:56px;">D</span><span style="color:fuchsia; font-size:32px;">S</span>
+    </div>
+
+    <hr>
+
+    <p class="line-1">
+        <sup>1</sup> Good morning, sir. <sub style="vertical-align: sub;">May I help you?</sub>
+    </p>
+
+    <p class="line-2">
+        <sup>2</sup> Hello. I want a insomnia meds. Have you got any?
+    </p>
+
+    <p class="line-3">
+        <sup>3</sup>
+        <span style="color:red">Y</span><span style="color:green">e</span><span style="color:blue">s</span>, 
+        <span style="color:orange">o</span><span style="color:purple">f</span> 
+        <span style="color:red">t</span><span style="color:green">h</span><span style="color:blue">r</span><span style="color:orange">e</span><span style="color:purple">e</span> 
+        <span style="color:red">c</span><span style="color:green">o</span><span style="color:blue">l</span><span style="color:orange">o</span><span style="color:purple">u</span><span style="color:red">r</span><span style="color:green">s</span>: 
+        <span style="color:blue">r</span><span style="color:orange">e</span><span style="color:purple">d</span>, 
+        <span style="color:red">g</span><span style="color:green">r</span><span style="color:blue">e</span><span style="color:orange">e</span><span style="color:purple">n</span> 
+        <span style="color:red">a</span><span style="color:green">n</span><span style="color:blue">d</span> 
+        <span style="color:orange">b</span><span style="color:purple">l</span><span style="color:red">a</span><span style="color:green">c</span><span style="color:blue">k</span>.
+    </p>
+
+    <pre><sup>4</sup> Will you, please, show me a green one?</pre>
+
+    <p class="line-5">
+        <sup>5</sup>
+        <span style="font-size:48px">H</span><span style="font-size:40px">e</span><span style="font-size:32px">r</span><span style="font-size:24px">e</span> 
+        <span style="font-size:18px">i</span><span style="font-size:14px">t</span> <span style="font-size:10px">i</span><span style="font-size:10px">s</span>.
+    </p>
+
+    <div class="line-6">
+        <sup>6</sup> Where is my mind?
+        <br>
+        <audio controls class="easter-egg-player">
+            <source src="audio/pixieswimm.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио.
+        </audio>
+    </div>
+
+    <p class="line-7">
+        <sup>7</sup>
+        <span style="color:red">I</span><span style="color:green">n</span> 
+        <span style="color:blue">C</span><span style="color:orange">h</span><span style="color:purple">i</span><span style="color:red">n</span><span style="color:green">a</span>.
+    </p>
+
+    <p class="line-8">
+        <sup>8</sup> Well, I like it and I'll take it. I want 20 pieces.
+    </p>
+
+    <p class="line-9">
+        <sup>9</sup> Where must <br> I pay?
+    </p>
+
+</body>
+</html>
+    </div>
+    <div id="footer"> footer (подвал) </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блочная верстка - Таблица</title>
+    <style type="text/css">
+        body { font-family: Arial, sans-serif; font-size: 14px; }
+        #container { margin: auto; text-align: center; width: 80%; }
+        #header { border: 5px solid orange; height: 80px; margin-bottom: 5px; }
+        #sidebar { border: 5px solid red; float: left; width: 20%; text-align: left; box-sizing: border-box; padding: 10px; }
+        #sidebar a { display: block; margin-bottom: 10px; color: blue; text-decoration: none; }
+        #sidebar a:hover { text-decoration: underline; }
+        #content { border: 5px solid green; float: right; width: 79%; box-sizing: border-box; padding: 20px; text-align: left; min-height: 500px; }
+        #footer { border: 5px solid aqua; height: 50px; margin-top: 5px; clear: both; }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header"> header (шапка сайта) </div>
+    <div id="sidebar">
+        <b>Навигация:</b><br><br>
+        <a href="index.html">Главная страница</a>
+        <a href="page1.html">Задание 1 (Диалог)</a>
+        <a href="page2.html">Задания 2-3 (Список)</a>
+        <a href="page3.html">Задание 4 (Таблица)</a>
+        <a href="page4.html">Задание 5 (Форма)</a>
+        <a href="page5.html">Задание 6 (Фреймы)</a>
+    </div>
+    <div id="content">
+       <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        td { border: 1px solid black; padding: 10px; text-align: center; }
+        
+        .tall-row td { height: 100px; }
+
+        .bold-top { border-top: 4px solid black; }
+        .bold-left { border-left: 4px solid black; }
+        .bold-right { border-right: 4px solid black; }
+        .bold-bottom { border-bottom: 4px solid black; }
+    </style>
+</head>
+<body>
+
+    <center>Заголовок таблицы</center>
+    <br>
+
+    <table>
+        <tr>
+            <td>Заголовок 1</td>
+            <td>Заголовок 2</td>
+            <td>Заголовок 3</td>
+            <td>Заголовок 4</td>
+        </tr>
+
+        <tr class="tall-row">
+            <td rowspan="2" style="vertical-align: bottom;">Ячейка 1</td>
+            <td colspan="2" style="vertical-align: middle;">Ячейка 2</td>
+            <td style="vertical-align: top;">Ячейка 3</td>
+        </tr>
+
+        <tr>
+            <td class="bold-top bold-left"></td> 
+            <td class="bold-top">Заголовок 1<br>Таблицы 2</td>
+            <td class="bold-top bold-right">Заголовок 2<br>Таблицы 2</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 4</td>
+            <td class="bold-left">Заголовок 3<br>Таблицы 2</td>
+            <td>Ячейка 1<br>Таблицы 2</td>
+            <td class="bold-right">Ячейка 2<br>Таблицы 2</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 5</td>
+            <td class="bold-left bold-bottom">Заголовок 4<br>Таблицы 2</td>
+            <td colspan="2" class="bold-right bold-bottom">Ячейка 3<br>Таблицы 2</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+    </div>
+    <div id="footer"> footer (подвал) </div>
+</div>
+</body>
+</html>

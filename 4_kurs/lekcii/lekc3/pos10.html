@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Пример 10</title>
+    <script>
+        function func1(){
+            resizeTo(500,400); //alert('Вы нажали первую кнопку'); //нет реакции
+        }
+        function func2(){
+            moveTo(50,50); //alert('Вы нажали вторую кнопку'); //нет реакции
+        }
+        function func3(){
+            close(); //alert('Вы нажали на третью кнопку');
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример ипользования формы с кнопками</p>
+    <form>
+        <input type="button" value="Первая" onclick="func1()">
+        <input type="button" value="Вторая" onclick="func2()">
+        <input type="button" value="Третья" onclick="func3()">
+    </form>
+</body>
+
+</html>

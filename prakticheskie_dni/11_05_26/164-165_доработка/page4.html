@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блочная верстка - Форма</title>
+    <style type="text/css">
+        body { font-family: Arial, sans-serif; font-size: 14px; }
+        #container { margin: auto; text-align: center; width: 80%; }
+        #header { border: 5px solid orange; height: 80px; margin-bottom: 5px; }
+        #sidebar { border: 5px solid red; float: left; width: 20%; text-align: left; box-sizing: border-box; padding: 10px; }
+        #sidebar a { display: block; margin-bottom: 10px; color: blue; text-decoration: none; }
+        #sidebar a:hover { text-decoration: underline; }
+        
+        /* Стили контейнера контента */
+        #content { border: 5px solid green; float: right; width: 79%; box-sizing: border-box; padding: 20px; text-align: left; min-height: 500px; }
+        #footer { border: 5px solid aqua; height: 50px; margin-top: 5px; clear: both; }
+
+        /* АДАПТИВНЫЕ СТИЛИ ДЛЯ ТВОЕЙ ТАБЛИЦЫ С ФОРМОЙ */
+        .form-table { 
+            border-collapse: collapse; 
+            width: 100%;             /* Таблица занимает всю доступную ширину дива */
+            max-width: 650px;        /* Но не становится шире, чем оригинальные 650px */
+            margin: 0 auto;          /* Центрируем таблицу встроенными CSS-средствами */
+        }
+        .form-table th, .form-table td { border: 1px solid black; padding: 8px; }
+        
+        .no-border-table { border: none; width: 100%; border-collapse: collapse; }
+        .no-border-table td { border: none; padding: 0; }
+        
+        textarea { width: 98%; overflow-y: scroll; resize: none; box-sizing: border-box; }
+        input[type="text"] { box-sizing: border-box; }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header"> header (шапка сайта) </div>
+    <div id="sidebar">
+        <b>Навигация:</b><br><br>
+        <a href="index.html">Главная страница</a>
+        <a href="page1.html">Задание 1 (Диалог)</a>
+        <a href="page2.html">Задания 2-3 (Список)</a>
+        <a href="page3.html">Задание 4 (Таблица)</a>
+        <a href="page4.html">Задание 5 (Форма)</a>
+        <a href="page5.html">Задание 6 (Фреймы)</a>
+    </div>
+    
+    <div id="content">
+        <form action="mailto:name@server.domen" method="post">
+            <table class="form-table">
+                <tr>
+                    <td align="center"><input type="submit" value="send"></td>
+                    <td align="center">
+                        <button type="button">
+                            кнопка с надписью<br>и рисунком<br>
+                            <img src="images/1.png" alt="pic">
+                        </button>
+                    </td>
+                    <td align="center"><input type="reset" value="reset"></td>
+                </tr>
+
+                <tr>
+                    <td width="30%">Вопрос 1</td>
+                    <td align="center"><input type="text" style="width: 90%;"></td>
+                    <td align="center"><input type="text" style="width: 90%;"></td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 2</td>
+                    <td align="center"><input type="checkbox"> Ответ 2.1</td>
+                    <td align="center"><input type="checkbox"> Ответ 2.2</td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 3</td>
+                    <td colspan="2">
+                        <table class="no-border-table">
+                            <tr>
+                                <td style="padding-right: 10px;">
+                                    <input type="text" id="file_path" style="width: 100%;" readonly>
+                                </td>
+                                <td width="80">
+                                    <input type="file" id="real_file" style="display: none;" onchange="document.getElementById('file_path').value = this.value;">
+                                    <input type="button" value="Обзор" style="width: 100%;" onclick="document.getElementById('real_file').click();">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 4</td>
+                    <td colspan="2" align="center">
+                        <select style="width: 60%;">
+                            <option>Ответ 4.1</option>
+                            <option>Ответ 4.2</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 5</td>
+                    <td align="center"><input type="radio" name="q5"> Ответ 5.1</td>
+                    <td align="center"><input type="radio" name="q5"> Ответ 5.2</td>
+                </tr>
+
+                <tr>
+                    <td>Вопрос 6</td>
+                    <td colspan="2" align="center">
+                        <select multiple size="3" style="width: 50%; overflow: hidden;">
+                            <option>Ответ 6.1</option>
+                            <option>Ответ 6.2</option>
+                            <option>Ответ 6.3</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Дополнительная информация</td>
+                    <td colspan="2">
+                        <textarea rows="4"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <div id="footer"> footer (подвал) </div>
+</div>
+</body>
+</html>

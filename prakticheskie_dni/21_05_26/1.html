@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .item{
+            height: 50px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+        .carousel-item >img{
+            width:100%;
+            height: 250px;
+        }
+        .carousel-indicators [data-bs-target]{
+            width:20px;
+            height: 20px;
+            border-radius:50%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        
+    </script>
+</head>
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/3.gif" class="d-block w-100" alt="abavagaga">
+    </div>
+    <div class="carousel-item">
+      <img src="images/2.gif" class="d-block w-100" alt="agavababa">
+    </div>
+    <div class="carousel-item">
+      <img src="images/1.gif" class="d-block w-100" alt="avagabaga">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="container">
+    <div class="row gx-3 mt-3">
+        <div class="col-6">
+            <div class="item"></div>
+        </div>
+        <div class="col-6">
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="row gx-3 mt-1">
+        <div class="col-3">
+            <div class="item"></div>
+        </div>
+        <div class="col-6">
+            <div class="item"></div>
+        </div>
+        <div class="col-3">
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+        <div class="col-1">
+            <div class="item"></div>
+        </div>
+    </div>
+</div>
+<div class="card offset-5" style="width: 15rem;">
+<img src="images/tatar.png" class="card-img-top" alt="avabagaga">
+    <div class="card-body">
+    <h5 class="card-title">Поездка в Татарстан</h5>
+    <p class="card-text">Попади на землю обетованную всего за три хандред бакс</p>
+    <a href="2.html" class="btn btn-primary">Попасть в Татарстан</a>
+</div>
+</div>
+</body>
+</html>

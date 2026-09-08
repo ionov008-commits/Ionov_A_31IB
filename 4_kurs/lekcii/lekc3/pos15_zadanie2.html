@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Пример 15</title>
+    <script>
+        function func1(e) {
+            e = e || event;
+            document.title = "(" + e.clientX + "," + e.clientY + ")";
+        }
+        
+        function func2() {
+            alert('Вы нажали на вторую кнопку');
+        }
+        
+        function func3() {
+            alert('Вы нажали на третью кнопку');
+        }
+        
+        function func4(e) {
+            e = e || event;
+            document.title = "Код клавиши = " + e.keyCode;
+        }
+        
+        function func5(e) {
+            e = e || event;
+            document.title = "Код кнопки = " + e.button;
+        }
+    </script>
+</head>
+
+<body style="background-color: green;" 
+      onmousemove="func1(event)" 
+      onkeypress="func1(event)"
+      onkeydown="func4(event)"
+      onmousedown="func5(event)">
+    
+    <p style="color:yellow">Пример использования формы с кнопками</p>
+    
+    <form>
+        <input type="button" value="Первая" onclick="func1()">
+        <input type="button" value="Вторая" onclick="func2()" onmouseover="func1(event)">
+        <input type="button" value="Третья" onclick="func3()">
+    </form>
+</body>
+
+</html>

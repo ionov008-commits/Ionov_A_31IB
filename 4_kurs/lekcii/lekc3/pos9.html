@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Пример 9</title>
+    <script>
+        function func1(){
+            m=prompt('Введите свое имя',''); alert(m);
+        }
+        function func2(){
+            n=confirm('Нажимите на любую кнопку'); alert(n);
+        }
+        function func3(){
+            alert('Вы нажали на третью кнопку');
+        }
+    </script>
+</head>
+
+<body style="background-color: green;">
+    <p style="color:yellow">Пример ипользования формы с кнопками</p>
+    <form>
+        <input type="button" value="Первая" onclick="func1()">
+        <input type="button" value="Вторая" onclick="func2()">
+        <input type="button" value="Третья" onclick="func3()">
+    </form>
+</body>
+
+</html>

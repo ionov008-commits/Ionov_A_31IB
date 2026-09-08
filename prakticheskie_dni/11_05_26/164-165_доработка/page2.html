@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блочная верстка - Список</title>
+    <style type="text/css">
+        body { font-family: Arial, sans-serif; font-size: 14px; }
+        #container { margin: auto; text-align: center; width: 80%; }
+        #header { border: 5px solid orange; height: 80px; margin-bottom: 5px; }
+        #sidebar { border: 5px solid red; float: left; width: 20%; text-align: left; box-sizing: border-box; padding: 10px; }
+        #sidebar a { display: block; margin-bottom: 10px; color: blue; text-decoration: none; }
+        #sidebar a:hover { text-decoration: underline; }
+        #content { border: 5px solid green; float: right; width: 79%; box-sizing: border-box; padding: 20px; text-align: left; min-height: 500px; }
+        #footer { border: 5px solid aqua; height: 50px; margin-top: 5px; clear: both; }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header"> header (шапка сайта) </div>
+    <div id="sidebar">
+        <b>Навигация:</b><br><br>
+        <a href="index.html">Главная страница</a>
+        <a href="page1.html">Задание 1 (Диалог)</a>
+        <a href="page2.html">Задания 2-3 (Список)</a>
+        <a href="page3.html">Задание 4 (Таблица)</a>
+        <a href="page4.html">Задание 5 (Форма)</a>
+        <a href="page5.html">Задание 6 (Фреймы)</a>
+    </div>
+    <div id="content">
+       <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>список</title>
+</head>
+<body>
+    <a name="top"></a> <h2>Навигационный список</h2>
+    
+    <ol type="I" start="3">
+        <li>Пункт 1
+            <ul>
+                <li>Пункт 1.1</li>
+                <li>Пункт 1.2</li>
+                <li>Пункт 1.3</li>
+            </ul>
+        </li>
+
+        <li>Пункт 2
+            <ol type="1">
+                <li>Пункт 2.1
+                    <ul>
+                        <li>Пункт 2.1.1 — Определение пункта 2.1.1</li>
+                        <li>Пункт 2.1.2 — Определение пункта 2.1.2</li>
+                        <li>Пункт 2.1.3 — Определение пункта 2.1.3</li>
+                    </ul>
+                </li>
+                <li>Пункт 2.2
+                    <ul>
+                        <li>Пункт 2.2.1
+                            <ol type="A" start="2">
+                                <li>Пункт 2.2.1.1</li>
+                                <li>Пункт 2.2.1.2</li>
+                            </ol>
+                        </li>
+                        <li>Пункт 2.2.2</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+
+        <li>Пункт 3
+            <ul>
+                <li>Пункт 3.1</li>
+                <li>Пункт 3.2</li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+    <p align="center">
+        <a href="#bottom_page">
+            <img src="images/1.png" alt="Место для картинки">
+        </a>
+        <br>Переход вниз
+    </p>
+
+    <ul>
+        <li><a href="mailto:ionov008@gmail.com">Ссылка на адрес электронной почты</a></li>
+        <li><a href="http://www.bspu.unibel.by" target="_blank">Ссылка на сайт БГПУ</a></li>
+        <li><a href="dialogue.html">Ссылка на файл .htm</a></li>
+        
+    </ul>
+
+    <div style="margin-top: 1000px;"></div>
+    <a name="bottom_page"></a>
+    <p>Конец страницы</p>
+	<li><a href="#top">Ссылка для перехода в начало страницы</a></li>
+</body>
+</html>
+    </div>
+    <div id="footer"> footer (подвал) </div>
+</div>
+</body>
+</html>
