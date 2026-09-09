@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title> пример 19 </title>
+</head>
+<script>
+    function func1 (){
+        document.getElementById("p1").style.color = "red";
+    }
+    function func2 (){
+        document.getElementById("p1").style.color = "black";
+        document.getElementById("p1").style.backgroundColor = "white";
+    }
+    function func3 (){
+        document. getElementById("p1").style.color = "yellow";
+        document. getElementById("p1").style.backgroundColor = "";
+    }
+</script>
+
+<body style="background-color : green">
+    <p id="p1" style="color:yellow">Пример использования формы с кнопками</р>
+    <form>
+        <input type="button" value="Первая" onclick="func1()">
+        <input type="button" value="Вторая" onclick="func2()">
+        <input type="button" value="Tpeтья" onclick="func3()">
+    </form>
+</body>
+
+</html>
