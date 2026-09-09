@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title> пример 20 </title>
+</head>
+<script>
+        function func1() {
+            document.getElementById("tp1").style.backgroundColor = "pink";
+            document.getElementById("tp1").value = "Вы нажали первую кнопку";
+            document.getElementById("btn1").value = "Нажата"
+            document.getElementById("btn2").value = "Вторая";
+            document.getElementById("btn3").value = "Третья";
+        }
+        function func2() {
+            document.getElementById("tp1").style.backgroundColor = "lightblue";
+            document.getElementById("tp1").value = "Вы нажали вторую кнопку";
+            document.getElementById("btn2").value = "Нажата";
+            document.getElementById("btn1").value = "Первая";
+            document.getElementById("btn3").value = "Третья";
+        }
+        function func3() {
+            document.getElementById("tp1").style.backgroundColor = "lightgreen";
+            document.getElementById("tp1").value = "Вы нажали третью кнопку";
+            document.getElementById("btn3").value = "Нажата";
+            document.getElementById("btn1").value = "Первая";
+            document.getElementById("btn2").value = "Вторая";
+        }
+    </script>
+<body style="background-color : green">
+    <p style="color:yellow">Пример использования формы с кнопками</р>
+    <form>
+        <input id="tp1" type="text" size=32 value = "" style="text-align: center;"><br>
+        <input id="btn1" style="background-color: pink;" type="button" value="Первая" onclick="func1()">
+        <input id="btn2" style="background-color: lightblue;" type="button" value="Вторая" onclick="func2()">
+        <input id="btn3" style="background-color: lightgreen;" type="button" value="Tpeтья" onclick="func3()">
+    </form>
+</body>
+
+</html>
