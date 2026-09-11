@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title> пример 23_1 </title>
+</head>
+<script>
+    function func1 (){
+        document.getElementById("rr1").src = "../lekc2/images/pic1.gif";
+    }
+    var flag = true;
+    function func2 (){
+        flag=!flag;
+        if(flag) document.getElementById("rr1").src = "pic2.gif";
+        else document.getElementById("rr1").src = "../lekc2/images/pic1.gif";
+    }
+</script>
+
+<body style="background-color : green">
+    <img id="rr1" src="../lekc2/images/pic1.gif" style="height:150px" onclick="func2()">
+
+</body>
+
+</html>

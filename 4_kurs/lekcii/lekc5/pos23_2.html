@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title> пример 23_2 </title>
+</head>
+<script>
+    function func1 (){
+        document.getElementById("rr1").src = "../lekc2/images/pic1.gif";
+    }
+    var n=0;
+    var pic = ["../lekc2/images/pic1.gif", "pic2.gif"];
+    function func2 (){
+        n = (n+1)%2;
+        document.getElementById('rr1').src = pic[n];
+    }
+</script>
+
+<body style="background-color : green">
+    <img id="rr1" src="../lekc2/images/pic1.gif" style="height:150px" onclick="func2()">
+    <p style="color:yellow">Пример использования формы с кнопками</р>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упячка</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Гифка стала больше */
+        .pepako {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        /* Контейнер для увеличенной пирамиды */
+        .pyramid-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Ряды пирамиды */
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* Котаны стали меньше, чтобы влезло больше рядов */
+        .row img {
+            width: 75px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Большая гифка пепако -->
+    <img src="images/pepako.gif" alt="pepako" class="pepako">
+
+    <!-- Увеличенная пирамида из cotan.gif в пять рядов -->
+    <div class="pyramid-container">
+        <!-- Ряд 1: 1 кот -->
+        <div class="row">
+            <img src="images/cotan.gif" alt="kote">
+        </div>
+        <!-- Ряд 2: 2 кота -->
+        <div class="row">
+            <img src="images/cotan.gif" alt="kote">
+            <img src="images/cotan.gif" alt="kote">
+        </div>
+        <!-- Ряд 3: 3 кота -->
+        <div class="row">
+            <img src="images/cotan.gif" alt="kote">
+            <img src="images/cotan.gif" alt="kote">
+            <img src="images/cotan.gif" alt="kote">
+        </div>
+        <!-- Ряд 4: 4 кота -->
+        <div class="row">
+            <img src="images/cotan.gif" alt="kote">
+            <img src="images/cotan.gif" alt="kote">
+            <img src="images/cotan.gif" alt="kote">
+            <img src="images/cotan.gif" alt="kote">
+        </div>
+        
+    </div>
+
+</body>
+</html>

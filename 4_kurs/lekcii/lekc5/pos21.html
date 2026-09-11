@@ -4,21 +4,26 @@
     <title> пример 21 </title>
 </head>
 <script>
-    function func1() {
-        alert('Вы нажали первую')
-    }
-    function func2() {
-        alert('Вы нажали вторую')
-    }
-    function func3() {
-        alert('Вы нажали третью')
-    }
-</script>
-
+        function func1() {
+            document.getElementById("tp1").style.backgroundColor = "pink";
+            document.getElementById("tp1").value = "Вы нажали первую кнопку";
+            document.getElementById("tp1").style.color = "blue";
+        }
+        function func2() {
+            document.getElementById("tp1").style.backgroundColor = "lightblue";
+            document.getElementById("tp1").value = "Вы нажали вторую кнопку";
+            document.getElementById("tp1").style.color = "blue";
+        }
+        function func3() {
+            document.getElementById("tp1").style.backgroundColor = "lightgreen";
+            document.getElementById("tp1").value = "Вы нажали третью кнопку";
+            document.getElementById("tp1").style.color = "blue";
+        }
+    </script>
 <body style="background-color : green">
-    <p id="tp1" style="color:yellow">Пример использования формы с кнопками</р>
+    <p style="color:yellow">Пример использования формы с кнопками</р>
     <form>
-        <input type="text" size=32 value = "" ><br>// кнопки будут строкой ниже 
+        <input id="tp1" type="text" size=32 value = "" ><br>
         <input style="background-color: pink;" type="button" value="Первая" onclick="func1()">
         <input style="background-color: lightblue;" type="button" value="Вторая" onclick="func2()">
         <input style="background-color: lightgreen;" type="button" value="Tpeтья" onclick="func3()">
