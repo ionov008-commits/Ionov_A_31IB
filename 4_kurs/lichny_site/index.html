@@ -21,7 +21,7 @@
 
         #container {
             display: grid;
-            grid-template-columns: 260px 1fr 220px;
+            grid-template-columns: 280px 1fr 220px;
             grid-template-rows: auto minmax(600px, auto) auto;
             grid-template-areas:
                 "header header header"
@@ -64,7 +64,7 @@
         #sidebar {
             grid-area: sidebar;
             border-left: 5px solid #dc3545;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
         }
         #sidebar h3 {
@@ -77,21 +77,23 @@
         }
         #sidebar ul {
             list-style: none;
+            padding-left: 0;
         }
         #sidebar li {
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
+        /* Выпадающие списки */
         #sidebar details {
-            background-color: #f8f9fa;
             border-radius: 6px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             border: 1px solid #e9ecef;
+            background-color: #f8f9fa;
         }
         #sidebar summary {
             cursor: pointer;
-            font-weight: 500;
-            padding: 8px 12px;
+            font-weight: 600;
+            padding: 8px 10px;
             color: #333;
             transition: background 0.2s;
             border-radius: 6px;
@@ -99,24 +101,37 @@
         #sidebar summary:hover {
             background-color: #e9ecef;
         }
-        #sidebar details[open] summary {
+        #sidebar details[open] > summary {
             border-bottom: 1px solid #e9ecef;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-            background-color: #e9ecef;
+            background-color: #e2e6ea;
         }
+
+        /* Вложенные списки */
+        #sidebar details details {
+            margin: 4px 8px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+        }
+        #sidebar details details summary {
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 6px 8px;
+        }
+
         #sidebar a {
             color: #0d6efd;
             text-decoration: none;
             display: block;
-            padding: 4px 12px;
+            padding: 4px 10px 4px 16px;
             border-radius: 4px;
+            font-size: 0.88rem;
             transition: all 0.2s;
         }
         #sidebar a:hover {
             background-color: #e7f1ff;
             color: #0a58ca;
-            text-decoration: none;
         }
 
         #content {
@@ -192,78 +207,158 @@
     <nav id="sidebar">
         <h3>Навигация по работам</h3>
         <ul>
+            <!-- 1. РАЗДЕЛ: ЛЕКЦИИ -->
             <li>
-                <details>
-                    <summary>Лекция 2</summary>
-                    <ul class="py-1">
-                        <li><a href="../lekcii/lekc2/pos1.html" target="lab-target">pos1</a></li>
-                        <li><a href="../lekcii/lekc2/pos2.html" target="lab-target">pos2</a></li>
-                        <li><a href="../lekcii/lekc2/pos3.html" target="lab-target">pos3</a></li>
-                        <li><a href="../lekcii/lekc2/pos4.html" target="lab-target">pos4</a></li>
-                        <li><a href="../lekcii/lekc2/pos5.html" target="lab-target">pos5</a></li>
-                        <li><a href="../lekcii/lekc2/pos6.html" target="lab-target">pos6</a></li>
-                        <li><a href="../lekcii/lekc2/pos7.html" target="lab-target">pos7</a></li>
-                        <li><a href="../lekcii/lekc2/pos8.html" target="lab-target">pos8</a></li>
-                    </ul>
+                <details open>
+                    <summary>Лекции</summary>
+                    <div class="py-1">
+                        
+                        <details>
+                            <summary>Лекция 2</summary>
+                            <ul>
+                                <li><a href="../lekcii/lekc2/pos1.html" target="lab-target">pos1</a></li>
+                                <li><a href="../lekcii/lekc2/pos2.html" target="lab-target">pos2</a></li>
+                                <li><a href="../lekcii/lekc2/pos3.html" target="lab-target">pos3</a></li>
+                                <li><a href="../lekcii/lekc2/pos4.html" target="lab-target">pos4</a></li>
+                                <li><a href="../lekcii/lekc2/pos5.html" target="lab-target">pos5</a></li>
+                                <li><a href="../lekcii/lekc2/pos6.html" target="lab-target">pos6</a></li>
+                                <li><a href="../lekcii/lekc2/pos7.html" target="lab-target">pos7</a></li>
+                                <li><a href="../lekcii/lekc2/pos8.html" target="lab-target">pos8</a></li>
+                            </ul>
+                        </details>
+
+                        <details>
+                            <summary>Лекция 3</summary>
+                            <ul>
+                                <li><a href="../lekcii/lekc3/pos9.html" target="lab-target">pos9</a></li>
+                                <li><a href="../lekcii/lekc3/pos10.html" target="lab-target">pos10</a></li>
+                                <li><a href="../lekcii/lekc3/pos11.html" target="lab-target">pos11</a></li>
+                                <li><a href="../lekcii/lekc3/pos12.html" target="lab-target">pos12</a></li>
+                                <li><a href="../lekcii/lekc3/pos12_zadanie.html" target="lab-target">pos12 задание</a></li>
+                                <li><a href="../lekcii/lekc3/pos13.html" target="lab-target">pos13</a></li>
+                                <li><a href="../lekcii/lekc3/pos14.html" target="lab-target">pos14</a></li>
+                                <li><a href="../lekcii/lekc3/pos15.html" target="lab-target">pos15</a></li>
+                                <li><a href="../lekcii/lekc3/pos15_zadanie1.html" target="lab-target">pos15 задание 1</a></li>
+                                <li><a href="../lekcii/lekc3/pos15_zadanie2.html" target="lab-target">pos15 задание 2</a></li>
+                            </ul>
+                        </details>
+
+                        <details>
+                            <summary>Лекция 4</summary>
+                            <ul>
+                                <li><a href="../lekcii/lekc4/pos16.html" target="lab-target">pos16</a></li>
+                                <li><a href="../lekcii/lekc4/pos17.html" target="lab-target">pos17</a></li>
+                                <li><a href="../lekcii/lekc4/pos18.html" target="lab-target">pos18</a></li>
+                                <li><a href="../lekcii/lekc4/pos19.html" target="lab-target">pos19</a></li>
+                            </ul>
+                        </details>
+
+                        <details open>
+                            <summary>Лекция 5</summary>
+                            <ul>
+                                <li><a href="../lekcii/lekc5/pos20.html" target="lab-target">pos20</a></li>
+                                <li><a href="../lekcii/lekc5/pos20_z1.html" target="lab-target">pos20 задание 1</a></li>
+                                <li><a href="../lekcii/lekc5/pos20_z2.html" target="lab-target">pos20 задание 2</a></li>
+                                <li><a href="../lekcii/lekc5/pos20_z3.html" target="lab-target">pos20 задание 3</a></li>
+                                <li><a href="../lekcii/lekc5/pos20_z4.html" target="lab-target">pos20 задание 4</a></li>
+                                <li><a href="../lekcii/lekc5/pos21.html" target="lab-target">pos21</a></li>
+                                <li><a href="../lekcii/lekc5/pos22.html" target="lab-target">pos22</a></li>
+                                <li><a href="../lekcii/lekc5/pos23_1.html" target="lab-target">pos23_1</a></li>
+                                <li><a href="../lekcii/lekc5/pos23_2.html" target="lab-target">pos23_2</a></li>
+                                <li><a href="../lekcii/lekc5/pos24.html" target="lab-target">pos24</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z1.html" target="lab-target">pos24z1</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z2.html" target="lab-target">pos24z2</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z3.html" target="lab-target">pos24z3</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z4.html" target="lab-target">pos24z4</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z5.html" target="lab-target">pos24z5</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z6.html" target="lab-target">pos24z6</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z7.html" target="lab-target">pos24z7</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z8.html" target="lab-target">pos24z8</a></li>
+                                <li><a href="../lekcii/lekc5/pos24z9.html" target="lab-target">pos24z9</a></li>
+                                <li><a href="../lekcii/lekc5/pos25.html" target="lab-target">pos25</a></li>
+                                <li><a href="../lekcii/lekc5/pos26.html" target="lab-target">pos26</a></li>
+                                <li><a href="../lekcii/lekc5/pos27.html" target="lab-target">pos27</a></li>
+                            </ul>
+                        </details>
+
+                        <details>
+                            <summary>Лекция 6</summary>
+                            <ul>
+                                <li><a href="../lekcii/lekc6/1.html" target="lab-target">1.html</a></li>
+                            </ul>
+                        </details>
+
+                    </div>
                 </details>
             </li>
 
-            <!-- Лекция 3 -->
+            <!-- 2. РАЗДЕЛ: ЛАБОРАТОРНЫЕ РАБОТЫ -->
             <li>
                 <details>
-                    <summary>Лекция 3</summary>
-                    <ul class="py-1">
-                        <li><a href="../lekcii/lekc3/pos9.html" target="lab-target">pos9</a></li>
-                        <li><a href="../lekcii/lekc3/pos10.html" target="lab-target">pos10</a></li>
-                        <li><a href="../lekcii/lekc3/pos11.html" target="lab-target">pos11</a></li>
-                        <li><a href="../lekcii/lekc3/pos12.html" target="lab-target">pos12</a></li>
-                        <li><a href="../lekcii/lekc3/pos12_zadanie.html" target="lab-target">pos12 задание</a></li>
-                        <li><a href="../lekcii/lekc3/pos13.html" target="lab-target">pos13</a></li>
-                        <li><a href="../lekcii/lekc3/pos14.html" target="lab-target">pos14</a></li>
-                        <li><a href="../lekcii/lekc3/pos15.html" target="lab-target">pos15</a></li>
-                        <li><a href="../lekcii/lekc3/pos15_zadanie1.html" target="lab-target">pos15 задание 1</a></li>
-                        <li><a href="../lekcii/lekc3/pos15_zadanie2.html" target="lab-target">pos15 задание 2</a></li>
-                    </ul>
+                    <summary>Лабораторные</summary>
+                    <div class="py-1">
+
+                        <details>
+                            <summary>Лабораторная 18</summary>
+                            <ul>
+                                <li><a href="../labi/lab18/3_05.html" target="lab-target">3_05</a></li>
+                                <li><a href="../labi/lab18/3_07.html" target="lab-target">3_07</a></li>
+                                <li><a href="../labi/lab18/3_08.html" target="lab-target">3_08</a></li>
+                            </ul>
+                        </details>
+
+                        <details>
+                            <summary>Лабораторная 19</summary>
+                            <ul>
+                                <li><a href="../labi/lab19/3_09.html" target="lab-target">3_09</a></li>
+                                <li><a href="../labi/lab19/3_10.html" target="lab-target">3_10</a></li>
+                                <li><a href="../labi/lab19/314-315.html" target="lab-target">314-315</a></li>
+                                <li><a href="../labi/lab19/p6.html" target="lab-target">p6</a></li>
+                            </ul>
+                        </details>
+
+                        <details>
+                            <summary>Лабораторная 20</summary>
+                            <ul>
+                                <li><a href="../labi/lab20/3_12.html" target="lab-target">3_12</a></li>
+                                <li><a href="../labi/lab20/5.html" target="lab-target">5.html</a></li>
+                                <li><a href="../labi/lab20/6.html" target="lab-target">6.html</a></li>
+                                <li><a href="../labi/lab20/7.html" target="lab-target">7.html</a></li>
+                            </ul>
+                        </details>
+
+                        <details>
+                            <summary>Лабораторная 21</summary>
+                            <ul>
+                                <li><a href="../labi/lab21/3_13.html" target="lab-target">3_13</a></li>
+                                <li><a href="../labi/lab21/18_1.html" target="lab-target">18.1</a></li>
+                                <li><a href="../labi/lab21/18_2.html" target="lab-target">18_2</a></li>
+                                <li><a href="../labi/lab21/18_3.html" target="lab-target">18_3</a></li>
+                            </ul>
+                        </details>
+
+                    </div>
                 </details>
             </li>
 
-            <!-- Лекция 4 -->
+            <!-- 3. РАЗДЕЛ: ОКР -->
             <li>
                 <details>
-                    <summary>Лекция 4</summary>
-                    <ul class="py-1">
-                        <li><a href="../lekcii/lekc4/pos16.html" target="lab-target">pos16</a></li>
-                        <li><a href="../lekcii/lekc4/pos17.html" target="lab-target">pos17</a></li>
-                        <li><a href="../lekcii/lekc4/pos18.html" target="lab-target">pos18</a></li>
-                        <li><a href="../lekcii/lekc4/pos19.html" target="lab-target">pos19</a></li>
-                    </ul>
+                    <summary>ОКР</summary>
+                    <div class="py-1">
+                        <ul>
+                            <li><a href="../OKR/index.html" target="lab-target">Главная ОКР</a></li>
+                        </ul>
+                    </div>
                 </details>
             </li>
 
-            <!-- Лекция 5 -->
-            <li>
-                <details>
-                    <summary>Лекция 5</summary>
-                    <ul class="py-1">
-                        <li><a href="../lekcii/lekc5/pos20.html" target="lab-target">pos20</a></li>
-                        <li><a href="../lekcii/lekc5/pos20_z1.html" target="lab-target">pos20 задание 1</a></li>
-                        <li><a href="../lekcii/lekc5/pos20_z2.html" target="lab-target">pos20 задание 2</a></li>
-                        <li><a href="../lekcii/lekc5/pos20_z3.html" target="lab-target">pos20 задание 3</a></li>
-                        <li><a href="../lekcii/lekc5/pos20_z4.html" target="lab-target">pos20 задание 4</a></li>
-                        <li><a href="../lekcii/lekc5/pos21.html" target="lab-target">pos21</a></li>
-                        <li><a href="../lekcii/lekc5/pos22.html" target="lab-target">pos22</a></li>
-                        <li><a href="../lekcii/lekc5/pos23_1.html" target="lab-target">pos23_1</a></li>
-                        <li><a href="../lekcii/lekc5/pos23_2.html" target="lab-target">pos23_2</a></li>
-                        <li><a href="../lekcii/lekc5/pos24.html" target="lab-target">pos24 (последняя)</a></li>
-                    </ul>
-                </details>
-            </li>
         </ul>
     </nav>
 
     <main id="content">
-        <!-- По умолчанию загружаем последнюю выполненную работу -->
-        <object name="lab-target" type="text/html" data="../lekcii/lekc5/pos24.html"></object>
+        <!-- По умолчанию загружаем страницу -->
+        <object name="lab-target" type="text/html" data="../lekcii/lekc5/pos27.html"></object>
     </main>
 
     <aside id="promo">
