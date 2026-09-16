@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function readText() {
+            alert(document.getElementById('box').innerHTML);
+        }
+        function changeText() {
+            document.getElementById('box').innerHTML = 'Новый текст';
+        }
+    </script>
+</head>
+<body>
+     <div id="box">Старый текст</div><br>
+    <button onclick="readText()">Прочитать</button>
+    <button onclick="changeText()">Изменить</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сумма</title>
+</head>
+
+<body>
+    <img src="pic2.gif">
+    <form name="myForm">
+        Первое число <input type="text"><br><br>
+        Второе число <input type="text"><br><br>
+        <input type="button" value="Вычислить сумму" onclick="calc()"><br><br>
+        Сумма <input type="text" name="result">
+    </form>
+
+    <script>
+        function calc() {
+            let f = document.forms[0].elements;
+            f[3].value = +f[0].value + +f[1].value;
+        }
+    </script>
+
+</body>
+
+</html>

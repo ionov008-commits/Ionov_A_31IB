@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Смена изображений</title>
+</head>
+<script>
+    const images = [
+        "pojaspersidski.jpg", "_1.jpg", "_2.jpg", "146_3.jpg",
+        "153_p.jpg", "160_p.jpg", "163_p.jpg", "154_p.jpg",
+        "159_p.jpg", "149_p.jpg", "146_4.jpg", "146_p_orn.jpg",
+        "pojasvasilek.jpg"
+    ];
+
+    let numimg = 0;
+    let imgslide = images.map(src => {
+        let img = new Image();
+        img.src = src;
+        return img;
+    });
+    function demoslides() {
+        document.images[0].src = imgslide[numimg].src
+        numimg++
+        if (numimg == 13)
+            numimg = 0;
+        setTimeout("demoslides()", 1000)
+    }
+</script>
+
+<body bgcolor="#FFFFFF">
+    <p><img src="155_p.jpg" width="420" height="500"></p>
+    <input type="button" value="Демонстрация слуцких поясов" onclick="demoslides()" />
+</body>
+
+</html>
