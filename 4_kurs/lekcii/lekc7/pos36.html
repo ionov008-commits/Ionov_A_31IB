@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример 36</title>
+    <script>
+        function func1() {
+            var data = new Date();
+            document.getElementById("tp1").value = data.getHours();
+        }
+
+        function func2() {
+            var data = new Date();
+            document.getElementById("tp1").value = data.getUTCHours();
+        }
+
+        function func3() {
+            var data = new Date();
+            data.setHours(23);
+            document.getElementById("tp1").value = data;
+        }
+    </script>
+</head>
+<body style="background-color: green;">
+    <p style="color: yellow;">Пример использования формы с кнопками</p>
+    <form>
+        <input id="tp1" type="text" size="80" value=""><br> 
+        <input style="background-color: pink;" type="button" value="Первая" onclick="func1()">
+        <input style="background-color: lightblue;" type="button" value="Вторая" onclick="func2()">
+        <input style="background-color: lightgreen;" type="button" value="Третья" onclick="func3()">
+    </form>
+</body>
+</html>
