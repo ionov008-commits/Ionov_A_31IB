@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Задание 4</title>
+</head>
+<script>
+    var pic = ["../lekc2/images/pic1.gif", "pic2.gif", "pic3.gif"];
+    var n = 0;
+
+    function update() {
+        document.getElementById('rr1').src = pic[n];
+        document.getElementById('btnPrev').disabled = (n === 0);
+        document.getElementById('btnNext').disabled = (n === pic.length - 1);
+    }
+</script>
+<body style="background-color: green">
+    <img id="rr1" src="../lekc2/images/pic1.gif" style="height:150px"><br>
+    <button id="btnPrev" onclick="n--; update()" disabled>Левая (-)</button>
+    <button id="btnNext" onclick="n++; update()">Правая (+)</button>
+</body>
+</html>
