@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+    <script>
+        function func1() {
+            var text1 = document.getElementById("tp1").value;
+            var text2 = document.getElementById("tp2").value;
+
+            var t1 = text1.split(":");
+            var t2 = text2.split(":");
+
+            var dat1 = new Date();
+            dat1.setHours(t1[0], t1[1], t1[2]);
+
+            var dat2 = new Date();
+            dat2.setHours(t2[0], t2[1], t2[2]);
+
+            document.getElementById("tp1").value = dat1.toTimeString();
+            document.getElementById("tp2").value = dat2.toTimeString();
+
+            var nn = Math.abs(dat1.getTime() - dat2.getTime());
+            nn = Math.floor(nn / (1000 * 60));
+
+            document.getElementById("tp3").value = nn;
+        }
+
+        function func2() {
+            document.getElementById("tp1").value = "";
+            document.getElementById("tp2").value = "";
+            document.getElementById("tp3").value = "";
+        }
+    </script>
+</head>
+<body style="background-color: green;">
+    <p style="color: yellow;">Ввод времени в формате чч:мм:сс</p>
+    <form>
+        <input id="tp1" type="text" size="80" value="" placeholder="Введите большее время в формате xx:xx:xx"><br>
+        <input id="tp2" type="text" size="80" value="" placeholder="Введите меньшее время"><br>
+        <input id="tp3" type="text" size="80" value="" placeholder="t1 - t2 в минутах"><br>
+        <input style="background-color: pink;" type="button" value="Вычислить" onclick="func1()">
+        <input style="background-color: lightblue;" type="button" value="Очистить" onclick="func2()">
+    </form>
+</body>
+</html>
