@@ -5,15 +5,13 @@
     <title>Перемещение</TITLE>
     <script type="text/javascript">
         var stop = 100
-        var n// номер кадра, в который вставляется изображение
+        var n
         var d = document
-        // предварительная загрузка изображений
         imgempty = new Image()
         imgempty.src = "7_l.jpg"
         imganim = new Image()
 
         imganim.src = "P.jpg"
-        // функция, осуществляющая анимацию
         function anim1() {
             var len = d.images.length
             if (n != stop) {
@@ -30,7 +28,6 @@
                 setTimeout("anim1()", 500)
             }
         }
-        // функция для задания начальной позиции
         functionst()
         {
             d.images[0].src = imganim.src
