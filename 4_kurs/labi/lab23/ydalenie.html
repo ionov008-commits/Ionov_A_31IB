@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Замена элемента</title>
+</head>
+
+<body>
+    <div id="article">
+        <p>Home Page</p>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+        const article = document.getElementById("article");
+        const oldNode = article.firstElementChild;
+        const newNode = document.createElement("h2");
+        newNode.textContent = "Hello World";
+        article.replaceChild(newNode, oldNode); 
+    </script>
+</body>
+
+</html>

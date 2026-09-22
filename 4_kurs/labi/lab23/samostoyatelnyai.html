@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Самостоятельная работа</title>
+</head>
+
+<body>
+    <div id="container">
+        <p>Элемент 1</p>
+        <p>Элемент 2</p>
+        <p>Элемент 3</p>
+        <p>Элемент 4</p>
+        <p>Элемент 5</p>
+        <p>Элемент 6</p>
+        <p>Элемент 7</p>
+        <p>Элемент 8</p>
+        <p>Элемент 9</p>
+        <p>Элемент 10</p>
+        <p>Элемент 11</p>
+        <p>Элемент 12</p>
+        <p>Элемент 13</p>
+        <p>Элемент 14</p>
+        <p>Элемент 15</p>
+    </div>
+
+    <script>
+        const container = document.getElementById("container");
+
+        let targetNode = container.firstElementChild;
+        for (let i = 1; i < 5; i++) {
+            targetNode = targetNode.nextSibling;
+        }
+
+        const nextNode = targetNode.nextSibling;
+
+        container.removeChild(targetNode);
+
+        const newP = document.createElement("p");
+        newP.textContent = "Дорогуш Владислав";
+        container.insertBefore(newP, nextNode);
+
+        const newHeader = document.createElement("h3");
+        newHeader.textContent = "Дорогуш Владислав";
+        container.replaceChild(newHeader, newP);
+
+        const firstElem = container.firstElementChild;
+        const clonedHeader = newHeader.cloneNode(true);
+
+        container.insertBefore(clonedHeader, firstElem);
+    </script>
+</body>
+
+</html>

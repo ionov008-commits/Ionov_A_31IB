@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Коллекции </title>
+    <script type="text/javaScript">
+        function l_image() {
+        let a = document.f.im.selectedIndex;
+        switch (a) 
+        { case 0: a='images/banana.jpg'; break;
+        case 1: a='images/klybn.jpg'; break;
+        case 2: a='images/lemon.jpg'; break;
+        case 3: a='images/orange.jpg'; break;
+        }
+        document.images[0].src=a;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <img SRC="images/klybn.jpg" height="200"><br><br>
+        <form name="f">
+            <select name="im" onChange="l_image();" size="3">
+                <option> бананы </option>
+                <option selected> клубника </option>
+                <option> лимоны </option>
+                <option> апельсины </option>
+            </select>
+        </form>
+    </center>
+</body>
+</html>

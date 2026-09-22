@@ -4,14 +4,15 @@
 <head>
     <title>Перемещение</TITLE>
     <script type="text/javascript">
+        var basePath = "images/"
         var stop = 100
         var n
         var d = document
         imgempty = new Image()
-        imgempty.src = "7_l.jpg"
+        imgempty.src = basePath + "7_l.jpg"
         imganim = new Image()
 
-        imganim.src = "P.jpg"
+        imganim.src = basePath + "P.jpg"
         function anim1() {
             var len = d.images.length
             if (n != stop) {
@@ -40,14 +41,14 @@
 <body>
     <h4 align=left>Простая анимация</h4>
     <hr>
-    <img src=7_l.jpg>
-    <img src=P.jpg>
-    <img src=P.jpg>
-    <img src=P.jpg>
-    <img src=P.jpg>
-    <img src=P.jpg>
-    <img src=P.jpg>
-    <img src=P.jpg>
+    <img src="images/7_l.jpg">
+    <img src="images/P.jpg">
+    <img src="images/P.jpg">
+    <img src="images/P.jpg">
+    <img src="images/P.jpg">
+    <img src="images/P.jpg">
+    <img src="images/P.jpg">
+    <img src="images/P.jpg">
     <hr>
     <FORM name="form1">
         <input type="button" value=Начало onClick="n = stop; st()">

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Никакой текст этой старницы...</p>
+    <p>... не должен копироваться!</p>
+
+    <script>
+        function noCopy1() {
+            alert('копирование через констекстное меню невозможно!');
+            event.preventDefault();
+        };
+        document.addEventListener("contexmenu", noCopy1);
+        document.onkeydown = function noCopy2(event) {
+            if(event.code=='KeyC' && event.ctrlKey) alert('копирование через crtl+C невозможно');
+            return false;
+        };
+    </script>
+</body>
+</html>
