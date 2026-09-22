@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+    <style>
+        .calendar-box {
+            width: 250px;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            padding: 5px;
+        }
+        .today {
+            background-color: yellow;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calendar-box">
+    <h3 id="month-title" style="text-align: center; margin-top: 0;"></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
+            </tr>
+        </thead>
+        <tbody id="cal-body"></tbody>
+    </table>
+</div>
+
+<script>
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth();
+    var today = now.getDate();
+
+    var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    document.getElementById("month-title").innerText = months[month] + " " + year;
+
+    var firstDay = new Date(year, month, 1).getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Корректировка дня недели (чтобы неделя начиналась с Пн, а не Вс)
+    var startingDay = firstDay === 0 ? 6 : firstDay - 1;
+
+    var tbody = document.getElementById("cal-body");
+    var date = 1;
+
+    for (var i = 0; i < 6; i++) {
+        var row = document.createElement("tr");
+
+        for (var j = 0; j < 7; j++) {
+            var cell = document.createElement("td");
+            if (i === 0 && j < startingDay) {
+                cell.innerText = "";
+            } else if (date > daysInMonth) {
+                break;
+            } else {
+                cell.innerText = date;
+                if (date === today) {
+                    cell.className = "today";
+                }
+                date++;
+            }
+            row.appendChild(cell);
+        }
+        tbody.appendChild(row);
+        if (date > daysInMonth) break;
+    }
+</script>
+
+</body>
+</html>

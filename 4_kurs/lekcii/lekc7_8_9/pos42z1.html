@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1 - LocalStorage</title>
+    <script>
+        function func1() {
+            document.getElementById("pp1").value = "";
+        }
+
+        function func2() {
+            var text = document.getElementById("pp1").value;
+            var name = text.split("=")[0];
+            var value = text.split("=")[1];
+
+            localStorage.setItem(name, value);
+            document.getElementById("pp1").value = "";
+        }
+
+        function func3() {
+            var name = document.getElementById("pp1").value;
+            document.getElementById("pp1").value = name + '=' + localStorage.getItem(name);
+        }
+
+        function func4() {
+            var name = document.getElementById("pp1").value;
+            localStorage.removeItem(name);
+            document.getElementById("pp1").value = "Запись " + name + " удалена";
+        }
+
+        function func5() {
+            localStorage.clear();
+            document.getElementById("pp1").value = "Все данные из LocalStorage удалены";
+        }
+    </script>
+</head>
+<body style="background-color: green;">
+    <p style="color: yellow;">Работа с LocalStorage: добавление, вывод и удаление</p>
+    <form>
+        <input id="pp1" type="text" size="80" value=""><br> 
+        <input style="background-color: pink;" type="button" value="Очистить" onclick="func1()">
+        <input style="background-color: lightblue;" type="button" value="Записать" onclick="func2()">
+        <input style="background-color: lightgreen;" type="button" value="Вывести" onclick="func3()">
+        <input style="background-color: orange;" type="button" value="Удалить" onclick="func4()">
+        <input style="background-color: red;" type="button" value="Удалить все" onclick="func5()">
+    </form>
+</body>
+</html>
