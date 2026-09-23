@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ОКР</title>
+    <script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 101) - 50);
+    }
+    function func1(a) {
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] > 0) sum += a[i];
+        }
+        return sum;
+    }
+
+    let sum = func1(arr);
+
+    alert("Массив: " + arr.join(", ") + "\nСумма положительных: " + sum);
+
+    if (sum > 100) {
+        document.write("<h1 style='color: purple; border: 2px solid red; display: inline-block;'>" + sum + "</h1>");
+    } else {
+        document.write("<h1 style='color: yellow; font-size: 1in;'>" + sum + "</h1>");
+    }
+</script>
+</head>
+<body>
+    //<div id="pp1">
+        //я хотел сделать вообще через getelementbyid, чтоб выводить покрасивше, но не успеваю, так что будет write
+    //</div>
+</body>
+</html>
