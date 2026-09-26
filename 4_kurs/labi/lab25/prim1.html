@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Пример A</title>
+</head>
+
+<body>
+    <h1>Регулярные выражения — Пример A</h1>
+    <script>
+        let str = `11 aaa bbb
+ccc 222 ddd
+eee ggg 33`;
+
+        let regexp5_a = /\d\d\d/m;
+        alert("Результат поиска a) /\\d\\d\\d/m: " + regexp5_a.exec(str));
+        // Ожидаемый результат: 222
+    </script>
+</body>
+
+</html>

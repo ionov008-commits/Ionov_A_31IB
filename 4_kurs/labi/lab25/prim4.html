@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример D</title>
+</head>
+<body>
+    <h1>Регулярные выражения — Пример D</h1>
+    <script>
+        let str = `11 aaa bbb
+ccc 222 ddd
+eee ggg 33`;
+        
+        let regexp5_d = /^\d\d\d/m;
+        alert("Результат поиска d) /^\\d\\d\\d/m: " + regexp5_d.exec(str)); 
+        // Ожидаемый результат: null (ни одна строка не начинается с трех цифр)
+    </script>
+</body>
+</html>
