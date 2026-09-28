@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Resize</title>
+    <script>
+        var myWin;
+
+        function f1() {
+            myWin = window.open("", "", "width=300,height=300");
+            alert("Окно открыто");
+        }
+
+        function f2() {
+            let x = prompt("Ширина:", "500");
+            let y = prompt("Высота:", "500");
+            if (myWin && !myWin.closed) {
+                myWin.resizeTo(parseInt(x), parseInt(y));
+                myWin.focus();
+            } else {
+                alert("Сначала откройте второе окно!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Открыть окно" onclick="f1()">
+    <input type="button" value="Изменить размер" onclick="f2()">
+</body>
+</html>
