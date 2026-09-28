@@ -9,8 +9,11 @@
             FIO: 'Говард Филлипс Лавкрафт',
             age: 1337
         };
+        let nemuzhik = '{"name":"leatherman"}';
         alert(muzhik.FIO + ', ' + muzhik.age + ' лет');
         alert(JSON.stringify(muzhik));
+        let parsenemuzhik = JSON.parse(nemuzhik);
+        alert(parsenemuzhik.name);
     </script>
 </head>
 <body>
