@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script>
+        var x = 100;
+        var y = 100;
+        var dx = 5;
+        var dy = 5;
+        var timer = null;
+
+        function startMove() {
+            if (timer === null) {
+                move();
+            }
+        }
+
+        function move() {
+            var img = document.images[0];
+            var w = window.innerWidth - 45; 
+            var h = window.innerHeight - 45;
+
+            x += dx;
+            y += dy;
+
+            if (x >= w || x <= 0) {
+                dx = -dx;
+            }
+            if (y >= h || y <= 0) {
+                dy = -dy;
+            }
+
+            img.style.left = x + 'px';
+            img.style.top = y + 'px';
+
+            timer = setTimeout("move()", 20);
+        }
+    </script>
+</head>
+<body style="overflow: hidden;">
+    <img src="images/ball.png" style="position: absolute; left: 100px; top: 100px; width: 40px; height: 40px;" onMouseOver="startMove()">
+</body>
+</html>
