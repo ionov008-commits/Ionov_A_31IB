@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Документ</title>
     <script language="JavaScript" type="text/javascript">
         function Win(){
             let wind = prompt('Введите адрес документа для открытия', '3_05.html');
-            let myWin = open(wind, "", "resizable=no, location=yes");
-            if(confirm('Желаете переместить фокус на новое окно?')) myWin.focus();
-            else myWin.blur();
+            if (!wind) return; // если нажали отмену
+            
+            // Открываем новое окно
+            let myWin = window.open(wind, "_blank", "width=600,height=400,resizable=yes,location=yes");
+            
+            // Защита от блокировщика (если myWin не заблокирован)
+            if (myWin) {
+                if(confirm('Желаете переместить фокус на новое окно?')) {
+                    myWin.focus();
+                } else {
+                    myWin.blur();
+                }
+            } else {
+                alert('Браузер заблокировал открытие окна! Разрешите всплывающие окна.');
+            }
         }
+
         function Res(){
             let x = prompt('Введите размер в пикселах для изменения ширины окна \n (знак минус уменьшит окно)', '200');
             let y = prompt('Введите размер в пикселах для изменения высоты окна \n (знак минус уменьшит окно)', '-100');
-            window.resizeBy(x, y);
+            
+            if (x !== null && y !== null) {
+                // Обязательно преобразуем строки из prompt в числа через parseInt
+                window.resizeBy(parseInt(x), parseInt(y));
+            }
         }
     </script>
 </head>
@@ -22,7 +39,8 @@
     Если желаете открыть другой документ в новом окне, нажмите на кнопку "Открыть"
     <input type="button" value="Открыть" onClick="Win();">
     <br><br>
-    Если желаете изменить размеры текущего окна, нажмите на кнопку "изменить"
+    Если желаете изменить размеры текущего окна, нажмите на кнопку "изменить" 
+    <i>(работает только для окон, открытых через скрипт)</i>
     <input type="button" value="изменить" onClick="Res();">
 </body>
 </html>
